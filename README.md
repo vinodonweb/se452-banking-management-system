@@ -10,7 +10,7 @@ The Bank Management System project aims to develop a comprehensive software solu
 | Vinod   | Frontend (React JS)| S is for sure |
 | Shlok   |  Ui/UX design  |something |
 | Syed Saifuddin   | Backend  | Account Management, CRM and Integration with external systems |
-|Kannan Hari | backend | something|
+|Hari| backend | Loan Management, Admin Dashboard, Security and Compliance|
 |Siraj | backend | don't know|
 
 ## Conflict Resolution
