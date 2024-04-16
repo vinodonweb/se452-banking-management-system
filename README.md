@@ -5,11 +5,11 @@ The Bank Management System project aims to develop a comprehensive software solu
 
 ## Project Members
 
-| Member |  Area  | Saying |
+| Member |  Area  | Specifics |
 |:-----|:--------:|------:|
 | Vinod   | Frontend (React JS)| S is for sure |
 | Shlok   |  Ui/UX design  |something |
-| saifuddin   | Backend  |something |
+| Syed Saifuddin   | Backend  | Account Management, CRM and Integration with external systems |
 |Kannan Hari | backend | something|
 |Siraj | backend | don't know|
 
