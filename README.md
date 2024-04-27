@@ -12,7 +12,7 @@ Milestone 1: Define the project and base structure and areas where each member w
 |:-----|:--------:|------:|
 | Vinod   | Frontend (React JS)| Front-end design into working UI using React JS.  |
 | Shlok   |  Ui/UX Design  | Frondend React Js creating UIs |
-| Syed Saifuddin   | Backend  | Account Management, CRM, and Integration with External Systems |
+| Syed Saifuddin | Backend  | Withdraw & Deposit  |
 | Hari | backend | Loan Management, Admin Dashboard, Security and Compliance|
 | Abdullah | backend | Document Managment, credit scoring and Risk management |
 
