@@ -1,0 +1,14 @@
+environment: development
+
+logging:
+  level:
+    root: INFO
+    org.hibernate.SQL: DEBUG
+
+spring:
+  datasource:
+    url: jdbc:h2:~/test
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    defer-datasource-initialization: true

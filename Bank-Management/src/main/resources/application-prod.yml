@@ -1,0 +1,13 @@
+environment: production
+
+logging:
+  level:
+    root: ERROR
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:se452prod
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    defer-datasource-initialization: true
