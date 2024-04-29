@@ -7,7 +7,7 @@ logging:
 
 spring:
   datasource:
-    url: jdbc:h2:~/test
+    url: jdbc:h2:mem:bank
   jpa:
     generate-ddl: true
     show-sql: true
