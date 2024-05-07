@@ -14,8 +14,5 @@ public class BalanceEnquiryController {
     private BalanceEnquiryService balanceEnquiryService;
 
     // Endpoint to retrieve balance for a given account ID
-    @GetMapping("/check")
-    public Double checkBalance(@RequestParam Long accountId) {
-        return balanceEnquiryService.getBalance(accountId);
-    }
+
 }

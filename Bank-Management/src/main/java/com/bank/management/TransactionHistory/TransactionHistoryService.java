@@ -15,14 +15,4 @@ public class TransactionHistoryService {
     public List<TransactionHistory> getTransactionHistory(Long accountId) {
         return transactionHistoryRepository.findByAccountId(accountId);
     }
-
-    public Object countTransactionsByAccountId(long anyLong) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'countTransactionsByAccountId'");
-    }
-
-    public Object countWithdrawalsByAccountId(long anyLong) {
-      // TODO Auto-generated method stub
-      throw new UnsupportedOperationException("Unimplemented method 'countWithdrawalsByAccountId'");
-    }
 }

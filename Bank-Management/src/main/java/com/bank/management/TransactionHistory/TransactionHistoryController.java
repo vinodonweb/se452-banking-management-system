@@ -16,8 +16,5 @@ public class TransactionHistoryController {
     private TransactionHistoryService transactionHistoryService;
 
     // Endpoint to get transaction history for a specific account
-    @GetMapping("/history")
-    public List<TransactionHistory> getTransactionHistory(@RequestParam Long accountId) {
-        return transactionHistoryService.getTransactionHistory(accountId);
-    }
+
 }

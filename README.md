@@ -8,13 +8,13 @@ Milestone 1: Define the project and base structure and areas where each member w
 
 ## Project Members
 
-| Member |  Area  | Specifics |
-|:-----|:--------:|------:|
-| Vinod   | Login / Signup| Login/ Signup (implement security features)  |
-| Shlok   |  Ui/UX Design  | Frondend React Js creating UIs |
-| Syed Saifuddin | Backend  | Withdraw & Deposit  |
-| Hari | backend | Loan Management, Admin Dashboard, Security and Compliance|
-| Abdullah | backend | Document Managment, credit scoring and Risk management |
+| Member | Specifics |
+|:-----|------:|
+| Vinod   |  Implemented Login and Signup functionality  |
+| Shlok   |  Implement Dashboard menus and user authentication |
+| Syed Saifuddin | Implement Withdraw and Deposit modules  |
+| Hari | Implemented Balance inquiry & transaction history|
+| Abdullah | Settings (Update profile details and Feedback page) |
 
 ## Conflict Resolution
 We will put it to a vote since we are 5, it will never be a tie 
