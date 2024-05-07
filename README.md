@@ -14,7 +14,7 @@ Milestone 1: Define the project and base structure and areas where each member w
 | Shlok   |  Implement Dashboard menus and user authentication |
 | Syed Saifuddin | Implement Withdraw and Deposit modules  |
 | Hari | Implemented Balance inquiry & transaction history|
-| Abdullah | Document management, credit scoring, and Risk management |
+| Abdullah | Settings (Update profile details and Feedback page) |
 
 ## Conflict Resolution
 We will put it to a vote since we are 5, it will never be a tie 
