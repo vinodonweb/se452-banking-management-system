@@ -18,6 +18,12 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
 		<!-- exclude default SFL4j loging to switch to log4j -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
