@@ -9,8 +9,6 @@ public class BalanceEnquiryService {
     @Autowired
     private BalanceEnquiryRepository balanceEnquiryRepository;
 
-    // Business method to get the balance of a specific account
-    public Double getBalance(Long accountId) {
-        return balanceEnquiryRepository.findBalanceByAccountId(accountId);
-    }
+    
+
 }
