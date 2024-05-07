@@ -1,8 +1,22 @@
 package com.bank.management.TransactionHistory;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
 
+@Data
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class TransactionHistory {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long transactionId;  // Unique identifier for the transaction
     private Date transactionDate;  // Date of the transaction
     private Double amount;  // Transaction amount
