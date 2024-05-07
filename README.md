@@ -12,7 +12,7 @@ Milestone 1: Define the project and base structure and areas where each member w
 |:-----|:--------:|------:|
 | Vinod   | Login / Signup| Login/ Signup (implement security features)  |
 | Shlok   |  Ui/UX Design  | Frondend React Js creating UIs |
-| Syed Saifuddin | Backend  | Withdraw & Deposit  |
+| Syed Saifuddin |  Withdraw & Deposit  | Implement Withdraw and Deposit modules  |
 | Hari | backend | Loan Management, Admin Dashboard, Security and Compliance|
 | Abdullah | backend | Document Managment, credit scoring and Risk management |
 
