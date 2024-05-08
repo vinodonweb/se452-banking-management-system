@@ -1,6 +1,20 @@
 package com.bank.management.DashBoard;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Dashboard {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Double totalBalance;
   private Integer numberOfTransactions;
   private Double totalDeposits;
