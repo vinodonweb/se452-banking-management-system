@@ -1,5 +1,8 @@
 package com.bank.management.DashBoard;
 
-public class DashboardRepository {
-  
+import com.bank.management.Deposit.Deposit;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface DashboardRepository extends JpaRepository<Dashboard, Long> {
+
 }
