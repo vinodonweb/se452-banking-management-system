@@ -13,11 +13,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/greeting")
-    public String getUserGreeting() {
-        // Retrieve username in a real scenario through security context or session
-        String username = "User";
-        return userService.getUserGreeting(username);
-    }
+//    @GetMapping("/greeting")
+//    public String getUserGreeting() {
+//        // Retrieve username in a real scenario through security context or session
+//        String username = "User";
+//        return userService.getUserGreeting(username);
+//    }
 }
 

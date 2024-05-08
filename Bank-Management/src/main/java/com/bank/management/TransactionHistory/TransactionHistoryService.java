@@ -12,7 +12,7 @@ public class TransactionHistoryService {
     private TransactionHistoryRepository transactionHistoryRepository;
 
     // Method to retrieve a list of all transactions for a given account
-    public List<TransactionHistory> getTransactionHistory(Long accountId) {
-        return transactionHistoryRepository.findByAccountId(accountId);
-    }
+//    public List<TransactionHistory> getTransactionHistory(Long accountId) {
+//        return transactionHistoryRepository.findByAccountId(accountId);
+//    }
 }
