@@ -1,4 +1,4 @@
-package com.bank.management;
+package com.bank.management.Account;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.id.factory.spi.GenerationTypeStrategy;
@@ -16,7 +16,7 @@ public class Account {
     @Column(name="account_id")
     private Long accountId;
 
-    @Column(name="account_number")
+    @Column(name="account_number",unique = true)
     private String accountNumber;
 
     @Column(name="account_type")

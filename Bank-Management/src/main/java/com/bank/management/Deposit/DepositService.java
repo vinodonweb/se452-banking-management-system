@@ -1,14 +1,16 @@
 package com.bank.management.Deposit;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/deposit")
+@Service
 @Log4j2
+@AllArgsConstructor
 public class DepositService {
 
     @Autowired
@@ -21,10 +23,11 @@ public class DepositService {
         return repo.findAll();
     }
 
-    public void save(Deposit d) {
+    public Deposit save(Deposit d) {
         log.traceEntry("enter save", d);
-        repo.save(d);
         log.traceExit("exit save", d);
+        return repo.save(d);
+
     }
 
 

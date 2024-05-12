@@ -19,11 +19,8 @@ public class Deposit {
     @Column(name="transaction_number")
     private int transactionNumber;
 
-    @Column(name = "source_account_number")
-    private String sourceAccountNumber;
-
-    @Column(name = "destination_account_number")
-    private String destinationAccountNumber;
+    @Column(name = "account_number")
+    private String AccountNumber;
 
     @Column(name = "amount")
     private double amount;

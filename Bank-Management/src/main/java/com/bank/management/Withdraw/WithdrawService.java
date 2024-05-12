@@ -2,12 +2,12 @@ package com.bank.management.Withdraw;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/withdraw")
+@Service
 @Log4j2
 public class WithdrawService {
 
@@ -21,10 +21,11 @@ public class WithdrawService {
         return repo.findAll();
     }
 
-    public void save(Withdraw w) {
+    public Withdraw save(Withdraw w) {
         log.traceEntry("enter save", w);
-        repo.save(w);
         log.traceExit("exit save", w);
+        return repo.save(w);
+
     }
 
 
