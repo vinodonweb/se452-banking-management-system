@@ -24,8 +24,7 @@ public class DepositTest {
     public void testDeposit() {
         Deposit d = new Deposit();
         d.setTransactionNumber(1);
-        d.setSourceAccountNumber("src1");
-        d.setDestinationAccountNumber("dest1");
+        d.setAccountNumber("src1");
 
         var b4Add = depositRepo.count();
         depositRepo.save(d);

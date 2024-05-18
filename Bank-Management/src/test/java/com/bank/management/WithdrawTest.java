@@ -2,6 +2,7 @@ package com.bank.management;
 
 
 import com.bank.management.Deposit.Deposit;
+import com.bank.management.Withdraw.Withdraw;
 import com.bank.management.Withdraw.WithdrawRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -20,16 +21,17 @@ public class WithdrawTest {
 
     @DisplayName("Withdraw test")
     @Test
-    public void depositTest()
+    public void withdrawTest()
     {
-        Deposit dep = new Deposit();
-        dep.setTransactionNumber(123);
-        dep.setSourceAccountNumber("src");
-        dep.setDestinationAccountNumber("dest");
-        dep.setAmount(1200);
-        String expectedWithError = "Pat Sajak";
-        String expectedNoError = "Deposit(depositId=null, transactionNumber=123, sourceAccountNumber=src, destinationAccountNumber=dest, amount=1200.0, depositDate=null, notes=null)";
-        assertEquals(expectedNoError, dep.toString());
+        Withdraw w=new Withdraw();
+        w.setWithdrawalType("ATM");
+        w.setAmount(1200);
+        var b4count=withdrawRepo.count();
+        withdrawRepo.save(w);
+        var afterCount=withdrawRepo.count();
+        assertEquals(b4count+1,afterCount);
+
+
     }
 
 }

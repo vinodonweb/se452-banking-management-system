@@ -17,7 +17,7 @@ public class Deposit {
     private Long depositId;
 
     @Column(name="transaction_number")
-    private int transactionNumber;
+    private String transactionNumber;
 
     @Column(name = "account_number")
     private String AccountNumber;
@@ -26,7 +26,7 @@ public class Deposit {
     private double amount;
 
     @Column(name = "deposit_date")
-    private LocalDateTime depositDate;
+    private String depositDate;
 
     @Column(name="notes")
     private String notes;

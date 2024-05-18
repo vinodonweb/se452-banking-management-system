@@ -17,7 +17,7 @@ public class Withdraw {
     private Long withdrawId;
 
     @Column(name="transaction_number")
-    private int transactionNumber;
+    private String transactionNumber;
 
     @Column(name = "withdrawal_type")
     private String withdrawalType;
@@ -29,7 +29,7 @@ public class Withdraw {
     private double amount;
 
     @Column(name = "withdrawal_date")
-    private LocalDateTime withdrawalDate;
+    private String withdrawalDate;
 
     @Column(name="notes")
     private String notes;
