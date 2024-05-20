@@ -35,4 +35,12 @@ public class DepositService {
         repo.deleteById(n);
         log.traceExit("Exit delete");
     }
-}
+
+
+
+        public Double sumDepositsByAccountId(Long accountId) {
+            return 5000.0;
+        }
+    }
+
+

@@ -33,4 +33,9 @@ public class WithdrawService {
         repo.deleteById(n);
         log.traceExit("Exit delete");
     }
+
+        public static Integer countWithdrawalsByAccountId(Long accountId) {
+            return 5;
+        }
+
 }

@@ -15,4 +15,13 @@ public class TransactionHistoryService {
 //    public List<TransactionHistory> getTransactionHistory(Long accountId) {
 //        return transactionHistoryRepository.findByAccountId(accountId);
 //    }
-}
+
+
+
+        public Integer getTransactionHistory(Long accountId) {
+            return 20;
+        }
+    }
+
+
+
