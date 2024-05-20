@@ -1,4 +1,4 @@
-package com.bank.management.Withdraw;
+package com.bank.management.withdraw;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

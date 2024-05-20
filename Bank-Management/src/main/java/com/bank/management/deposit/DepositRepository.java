@@ -1,4 +1,4 @@
-package com.bank.management.Deposit;
+package com.bank.management.deposit;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

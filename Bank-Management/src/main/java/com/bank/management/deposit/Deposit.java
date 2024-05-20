@@ -1,11 +1,9 @@
-package com.bank.management.Deposit;
+package com.bank.management.deposit;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.time.LocalDateTime;
 
 @Data
 @Entity

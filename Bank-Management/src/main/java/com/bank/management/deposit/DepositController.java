@@ -1,6 +1,6 @@
-package com.bank.management.Deposit;
+package com.bank.management.deposit;
 
-import com.bank.management.Account.AccountService;
+import com.bank.management.account.AccountService;
 import com.bank.management.ResponseAPI;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
