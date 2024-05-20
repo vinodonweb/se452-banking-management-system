@@ -15,41 +15,51 @@ import lombok.NoArgsConstructor;
 public class Dashboard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Double totalBalance;
-  private Integer numberOfTransactions;
-  private Double totalDeposits;
-  private Integer numberOfWithdrawals;
+    private Long id; // Adding an ID field as the primary key
 
-  // Getters and Setters
-  public Double getTotalBalance() {
-      return totalBalance;
-  }
+    private Double totalBalance;
+    private Integer numberOfTransactions;
+    private Double totalDeposits;
+    private Integer numberOfWithdrawals;
 
-  public void setTotalBalance(Double totalBalance) {
-      this.totalBalance = totalBalance;
-  }
+    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
 
-  public Integer getNumberOfTransactions() {
-      return numberOfTransactions;
-  }
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-  public void setNumberOfTransactions(Integer numberOfTransactions) {
-      this.numberOfTransactions = numberOfTransactions;
-  }
+    public Double getTotalBalance() {
+        return totalBalance;
+    }
 
-  public Double getTotalDeposits() {
-      return totalDeposits;
-  }
+    public void setTotalBalance(Double totalBalance) {
+        this.totalBalance = totalBalance;
+    }
 
-  public void setTotalDeposits(Double totalDeposits) {
-      this.totalDeposits = totalDeposits;
-  }
+    public Integer getNumberOfTransactions() {
+        return numberOfTransactions;
+    }
 
-  public Integer getNumberOfWithdrawals() {
-      return numberOfWithdrawals;
-  }
+    public void setNumberOfTransactions(Integer numberOfTransactions) {
+        this.numberOfTransactions = numberOfTransactions;
+    }
 
-  public void setNumberOfWithdrawals(Integer numberOfWithdrawals) {
-      this.numberOfWithdrawals = numberOfWithdrawals;
-  }
+    public Double getTotalDeposits() {
+        return totalDeposits;
+    }
+
+    public void setTotalDeposits(Double totalDeposits) {
+        this.totalDeposits = totalDeposits;
+    }
+
+    public Integer getNumberOfWithdrawals() {
+        return numberOfWithdrawals;
+    }
+
+    public void setNumberOfWithdrawals(Integer numberOfWithdrawals) {
+        this.numberOfWithdrawals = numberOfWithdrawals;
+    }
 }

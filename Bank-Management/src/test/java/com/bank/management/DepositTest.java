@@ -23,7 +23,7 @@ public class DepositTest {
     @Test
     public void testDeposit() {
         Deposit d = new Deposit();
-        d.setTransactionNumber(1);
+        d.setTransactionNumber(String.valueOf(1));
         d.setAccountNumber("src1");
 
         var b4Add = depositRepo.count();

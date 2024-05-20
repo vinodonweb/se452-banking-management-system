@@ -9,6 +9,8 @@ public class BalanceEnquiryService {
     @Autowired
     private BalanceEnquiryRepository balanceEnquiryRepository;
 
-    
 
-}
+        public Double getBalance(Long accountId) {
+            return 1000.0;
+        }
+    }

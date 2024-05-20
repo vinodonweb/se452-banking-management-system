@@ -13,8 +13,8 @@ public class DashboardController {
     @Autowired
     private DashboardService dashboardService;
 
-//    @GetMapping("/data")
-//    public Dashboard getDashboardData(@RequestParam Long accountId) {
-//        return dashboardService.getDashboardData(accountId);
-//    }
+    @GetMapping("/data")
+    public Dashboard getDashboardData(@RequestParam Long accountId) {
+        return dashboardService.getDashboardData(accountId);
+    }
 }
