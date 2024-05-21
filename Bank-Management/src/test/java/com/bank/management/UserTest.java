@@ -5,9 +5,9 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.when;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.bank.management.User.User;
-import com.bank.management.User.UserRepository;
-import com.bank.management.User.UserService;
+import com.bank.management.user.User;
+import com.bank.management.user.UserRepository;
+import com.bank.management.user.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

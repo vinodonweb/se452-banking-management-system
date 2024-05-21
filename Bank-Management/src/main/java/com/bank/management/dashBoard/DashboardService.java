@@ -1,4 +1,4 @@
-package com.bank.management.DashBoard;
+package com.bank.management.dashBoard;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

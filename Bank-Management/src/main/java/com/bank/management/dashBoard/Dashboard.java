@@ -1,4 +1,4 @@
-package com.bank.management.DashBoard;
+package com.bank.management.dashBoard;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
