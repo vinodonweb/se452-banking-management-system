@@ -1,0 +1,18 @@
+<header>
+  <app-navbar></app-navbar>
+</header>
+<div class="block">
+<app-button
+*ngIf="hasRoute('/deposit')&&showBtnDeposit"
+color="{{ showAddDeposit ? 'red' : 'green' }}"
+text="{{ showAddDeposit ? 'Close' : 'Deposit' }}"
+(btnClick)="toggleAddDeposit()"
+></app-button>
+<app-button
+*ngIf="hasRoute('/deposit')&&showBtnWithdraw"
+color="{{ showAddWithdraw ? 'red' : 'blue' }}"
+text="{{ showAddWithdraw ? 'Close' : 'Withdraw' }}"
+(btnClick)="toggleAddWithdraw()"
+></app-button>
+
+</div>

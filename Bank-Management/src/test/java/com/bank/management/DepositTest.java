@@ -1,7 +1,7 @@
 package com.bank.management;
 
-import com.bank.management.Deposit.Deposit;
-import com.bank.management.Deposit.DepositRepository;
+import com.bank.management.deposit.Deposit;
+import com.bank.management.deposit.DepositRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

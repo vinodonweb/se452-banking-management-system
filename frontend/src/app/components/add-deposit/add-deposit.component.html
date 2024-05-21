@@ -1,0 +1,46 @@
+<form *ngIf="showAddTask" class="add-form" (ngSubmit)="onSubmit()">
+  <div class="form-control">
+    <div class="field">
+    <label class="label is-medium" for="text">Account Number</label>
+    <div class="control">
+    <input
+     class="input is-medium"
+      type="text"
+      name="text"
+      [(ngModel)]="accountNumber"
+      id="accountNumber"
+      placeholder="Account number"
+    />
+    </div>
+  </div>
+  <div class="form-control">
+    <label class="label is-medium"for="number">Amount</label>
+    <div class="control">
+    <input
+    class="input is-medium"
+      type="text"
+      name="amount"
+      [(ngModel)]="amount"
+      id="amount"
+      placeholder="Amount"
+    />
+    </div>
+  </div>
+  <div class="form-control">
+    <label class="label is-medium" for="day">Notes</label>
+    <div class="control">
+    <input
+    class="input is-medium"
+      type="text"
+      name="notes"
+      [(ngModel)]="notes"
+      id="notes"
+      placeholder="Notes"
+    />
+    </div>
+  </div>
+  
+  <input type="submit" value="Deposit" style="margin-top: 20px;" class="button is-link" />
+ 
+</div>
+</form>
