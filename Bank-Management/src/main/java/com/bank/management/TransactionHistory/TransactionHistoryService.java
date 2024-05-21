@@ -1,4 +1,4 @@
-package com.bank.management.TransactionHistory;
+package com.bank.management.transactionhistory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,14 +18,7 @@ public class TransactionHistoryService {
     // Regular expression for validating account number (10-digit numeric string)
     private static final Pattern ACCOUNT_NUMBER_PATTERN = Pattern.compile("\\d{10}");
 
-    /**
-     * Retrieves the transaction history for a given account number.
-     *
-     * @param accountNumber the account number
-     * @return the list of transactions for the account
-     * @throws IllegalArgumentException if the account number is invalid
-     * @throws IllegalStateException if no transactions are found
-     */
+
     public List<TransactionHistory> getTransactionHistoryByAccountNumber(String accountNumber) {
         // Validate account number
         validateAccountNumber(accountNumber);
@@ -41,12 +34,7 @@ public class TransactionHistoryService {
         return transactions;
     }
 
-    /**
-     * Validates the account number.
-     *
-     * @param accountNumber the account number to validate
-     * @throws IllegalArgumentException if the account number is invalid
-     */
+  
     private void validateAccountNumber(String accountNumber) {
         if (accountNumber == null || accountNumber.trim().isEmpty()) {
             throw new IllegalArgumentException("Account number cannot be null or empty.");
