@@ -1,4 +1,4 @@
-package com.bank.management.BalanceEnquiry;
+package com.bank.management.balanceenquiry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
