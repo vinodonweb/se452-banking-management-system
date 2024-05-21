@@ -1,4 +1,4 @@
-package com.bank.management.BalanceEnquiry;
+package com.bank.management.balanceenquiry;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
