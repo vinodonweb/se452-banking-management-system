@@ -1,15 +1,13 @@
 package com.bank.management;
 
-import com.bank.management.Login.LoginRepository;
-import com.bank.management.Login.Login;
-import com.bank.management.Login.LoginService;
+import com.bank.management.login.LoginRepository;
+import com.bank.management.login.Login;
+import com.bank.management.login.LoginService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;

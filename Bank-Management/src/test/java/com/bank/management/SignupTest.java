@@ -1,8 +1,8 @@
 package com.bank.management;
 
-import com.bank.management.Signup.Signup;
-import com.bank.management.Signup.SignupRepository;
-import com.bank.management.Signup.SignupService;
+import com.bank.management.signup.Signup;
+import com.bank.management.signup.SignupRepository;
+import com.bank.management.signup.SignupService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

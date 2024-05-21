@@ -1,4 +1,4 @@
-package com.bank.management.BalanceEnquiry;
+package com.bank.management.balanceenquiry;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,6 +16,7 @@ public class BalanceEnquiry {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long accountId;  // Unique identifier for the account
+    private String accountNumber;  // Account number
     private Double balance;  // Current balance of the account
 
     // Getters and setters
@@ -25,6 +26,14 @@ public class BalanceEnquiry {
 
     public void setAccountId(Long accountId) {
         this.accountId = accountId;
+    }
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
 
     public Double getBalance() {

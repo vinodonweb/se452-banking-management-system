@@ -1,9 +1,8 @@
 package com.bank.management;
 
 
-import com.bank.management.Deposit.Deposit;
-import com.bank.management.Withdraw.Withdraw;
-import com.bank.management.Withdraw.WithdrawRepository;
+import com.bank.management.withdraw.Withdraw;
+import com.bank.management.withdraw.WithdrawRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,0 +1,19 @@
+
+<div class="container">
+  <div class="columm" style="margin-left: 30px; margin-top: 1px;;"> 
+    <h1 class="title is-1">All Accounts</h1>
+    <app-task-item
+    *ngFor="let account of accounts"
+    [account]="account"
+    (onDeleteTask)="deleteTask(account)"
+    (onToggleReminder)="toggleReminder(account)"
+  ></app-task-item>
+  </div>
+<div class="column" style="margin-left: 370px;">
+  <app-add-deposit  (onAddDeposit)="addDeposit($event)"></app-add-deposit>
+  <app-add-withdraw (onAddWithdraw)="addWithdraw($event)"></app-add-withdraw>
+  </div>
+
+</div>
+
+

@@ -1,0 +1,54 @@
+<form *ngIf="showAddWithdraw" class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+      <label class="label is-medium" for="text">Account Number</label>
+      <div class="control is-medium  ">
+      <input 
+      class="input is-medium"
+        type="text"
+        name="text"
+        [(ngModel)]="accountNumber"
+        id="accountNumber"
+        placeholder="Account number"
+      />
+    </div>
+    </div>
+    <div class="form-control">
+      <label class="label is-medium" for="number">Amount</label>
+      <div class="control">
+      <input
+      class="input is-medium"
+        type="text"
+        name="amount"
+        [(ngModel)]="amount"
+        id="amount"
+        placeholder="Amount"
+      />
+    </div>
+</div>
+    <div class="form-control">
+      <label class="label is-medium" for="day">Notes</label>
+      <div class="control">
+      <input
+      class="input is-medium"
+        type="text"
+        name="notes"
+        [(ngModel)]="notes"
+        id="notes"
+        placeholder="Notes"
+      />
+    </div>
+</div>
+    <div class="form-control">
+        <label class="label is-medium" for="day">Withdrawal Type</label>
+        <div class="control is-medium">
+        <select id="withdrawalType" [(ngModel)]="withdrawalType" class="select is-normal">
+            <option>Cash</option>
+            <option>Cheque</option>
+            <option>Online-transfer</option>
+        </select>
+      </div>
+      </div>
+  
+    <input type="submit" value="Withdraw" style="margin-top: 20px;" class="button is-link" />
+  </form>
+  
