@@ -1,4 +1,4 @@
-package com.bank.management.BalanceEnquiry;
+package com.bank.management.balanceenquiry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,14 +17,7 @@ public class BalanceEnquiryService {
     // Regular expression for validating account number (10-digit numeric string)
     private static final Pattern ACCOUNT_NUMBER_PATTERN = Pattern.compile("\\d{10}");
 
-    /**
-     * Retrieves the balance for a given account number.
-     *
-     * @param accountNumber the account number
-     * @return the balance for the account
-     * @throws IllegalArgumentException if the account number is invalid
-     * @throws IllegalStateException if no account is found
-     */
+ 
     public double getBalanceByAccountNumber(String accountNumber) {
         // Validate account number
         validateAccountNumber(accountNumber);

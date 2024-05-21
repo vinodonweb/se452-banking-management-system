@@ -1,4 +1,4 @@
-package com.bank.management.TransactionHistory;
+package com.bank.management.transactionhistory;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
