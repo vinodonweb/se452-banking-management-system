@@ -1,17 +1,11 @@
 package com.bank.management.Withdraw;
 
-import com.bank.management.Account.Account;
 import com.bank.management.Account.AccountService;
-import com.bank.management.Deposit.Deposit;
 import com.bank.management.ResponseAPI;
-import lombok.With;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import lombok.extern.log4j.Log4j2;
 
 import java.util.List;
 

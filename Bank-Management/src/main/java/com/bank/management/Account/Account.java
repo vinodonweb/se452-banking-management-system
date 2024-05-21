@@ -1,7 +1,6 @@
 package com.bank.management.Account;
 import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.id.factory.spi.GenerationTypeStrategy;
 
 import java.time.LocalDateTime;
 

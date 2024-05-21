@@ -1,4 +1,4 @@
-package com.bank.management.Login;
+package com.bank.management.login;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

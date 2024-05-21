@@ -1,4 +1,4 @@
-package com.bank.management.Signup;
+package com.bank.management.signup;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

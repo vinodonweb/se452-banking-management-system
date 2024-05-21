@@ -1,4 +1,4 @@
-package com.bank.management.Signup;
+package com.bank.management.signup;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
