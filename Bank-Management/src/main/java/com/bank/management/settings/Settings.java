@@ -1,4 +1,4 @@
-package com.bank.management.Settings;
+package com.bank.management.settings;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

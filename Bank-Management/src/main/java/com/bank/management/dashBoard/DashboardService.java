@@ -1,11 +1,11 @@
 package com.bank.management.dashBoard;
 
+import com.bank.management.balanceEnquiry.BalanceEnquiryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.bank.management.BalanceEnquiry.BalanceEnquiryService;
-import com.bank.management.Deposit.DepositService;
-import com.bank.management.TransactionHistory.TransactionHistoryService;
-import com.bank.management.Withdraw.WithdrawService;
+import com.bank.management.deposit.DepositService;
+import com.bank.management.transactionHistory.TransactionHistoryService;
+import com.bank.management.withdraw.WithdrawService;
 
 
 @Service
@@ -22,8 +22,8 @@ public class DashboardService {
 
     public Dashboard getDashboardData(Long accountId) {
         Dashboard data = new Dashboard();
-        data.setTotalBalance(balanceEnquiryService.getBalance(accountId));
-        data.setNumberOfTransactions(transactionService.getTransactionHistory(accountId));
+       // data.setTotalBalance(balanceEnquiryService.getBalance(accountId));
+        //data.setNumberOfTransactions(transactionService.getTransactionHistory(accountId));
         data.setTotalDeposits(depositService.sumDepositsByAccountId(accountId));
         data.setNumberOfWithdrawals(WithdrawService.countWithdrawalsByAccountId(accountId));
 

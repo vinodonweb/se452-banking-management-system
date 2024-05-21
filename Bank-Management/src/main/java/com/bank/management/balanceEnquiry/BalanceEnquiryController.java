@@ -1,5 +1,6 @@
 package com.bank.management.balanceenquiry;
 
+import com.bank.management.balanceEnquiry.BalanceEnquiryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

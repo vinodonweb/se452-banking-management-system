@@ -3,7 +3,7 @@ package com.bank.management;
 import com.bank.management.dashBoard.Dashboard;
 import com.bank.management.dashBoard.DashboardRepository;
 import com.bank.management.dashBoard.DashboardService;
-import com.bank.management.TransactionHistory.TransactionHistoryService;
+import com.bank.management.transactionHistory.TransactionHistoryService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;

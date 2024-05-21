@@ -1,7 +1,6 @@
-package com.bank.management.Settings;
+package com.bank.management.settings;
 
 import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,10 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bank.management.Deposit.Deposit;
-import com.bank.management.Deposit.DepositService;
-
-import lombok.extern.log4j.Log4j2;
+import com.bank.management.deposit.Deposit;
+import com.bank.management.deposit.DepositService;
 
 import java.util.List;
 

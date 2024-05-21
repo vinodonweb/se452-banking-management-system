@@ -1,10 +1,7 @@
 package com.bank.management.withdraw;
 
-<<<<<<< HEAD:Bank-Management/src/main/java/com/bank/management/Withdraw/WithdrawController.java
-import com.bank.management.Account.AccountService;
-=======
 import com.bank.management.account.AccountService;
->>>>>>> 778bec5cf4bb3bdd9f9c80df30baf33e98ad93ed:Bank-Management/src/main/java/com/bank/management/withdraw/WithdrawController.java
+
 import com.bank.management.ResponseAPI;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;

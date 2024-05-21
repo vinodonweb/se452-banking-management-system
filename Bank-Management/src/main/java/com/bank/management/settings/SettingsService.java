@@ -1,12 +1,12 @@
-package com.bank.management.Settings;
+package com.bank.management.settings;
 
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bank.management.Withdraw.Withdraw;
-import com.bank.management.Withdraw.WithdrawRepository;
+import com.bank.management.withdraw.Withdraw;
+import com.bank.management.withdraw.WithdrawRepository;
 
 import java.util.List;
 

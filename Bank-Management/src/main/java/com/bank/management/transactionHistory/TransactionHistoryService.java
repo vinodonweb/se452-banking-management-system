@@ -1,44 +1,40 @@
-package com.bank.management.balanceenquiry;
+package com.bank.management.transactionHistory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.regex.Pattern;
 
 /**
- * Service for managing balance enquiries.
+ * Service for managing transaction history.
  */
 @Service
-public class BalanceEnquiryService {
+public class TransactionHistoryService {
 
     @Autowired
-    private BalanceEnquiryRepository balanceEnquiryRepository;
+    private TransactionHistoryRepository transactionHistoryRepository;
 
     // Regular expression for validating account number (10-digit numeric string)
     private static final Pattern ACCOUNT_NUMBER_PATTERN = Pattern.compile("\\d{10}");
 
- 
-    public double getBalanceByAccountNumber(String accountNumber) {
+
+    public List<com.bank.management.transactionhistory.TransactionHistory> getTransactionHistoryByAccountNumber(String accountNumber) {
         // Validate account number
         validateAccountNumber(accountNumber);
 
-        // Retrieve balance for the given account number
-        Double balance = balanceEnquiryRepository.findBalanceByAccountNumber(accountNumber);
+        // Retrieve transaction history for the given account number
+        List<com.bank.management.transactionhistory.TransactionHistory> transactions = transactionHistoryRepository.findByAccountNumber(accountNumber);
 
-        // Validate that the account exists and balance is not null
-        if (balance == null) {
-            throw new IllegalStateException("Account not found for account number: " + accountNumber);
+        // Validate that transactions exist
+        if (transactions == null || transactions.isEmpty()) {
+            throw new IllegalStateException("No transactions found for account number: " + accountNumber);
         }
 
-        return balance;
+        return transactions;
     }
 
-    /**
-     * Validates the account number.
-     *
-     * @param accountNumber the account number to validate
-     * @throws IllegalArgumentException if the account number is invalid
-     */
+  
     private void validateAccountNumber(String accountNumber) {
         if (accountNumber == null || accountNumber.trim().isEmpty()) {
             throw new IllegalArgumentException("Account number cannot be null or empty.");

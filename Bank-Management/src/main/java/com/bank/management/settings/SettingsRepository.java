@@ -1,4 +1,4 @@
-package com.bank.management.Settings;
+package com.bank.management.settings;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

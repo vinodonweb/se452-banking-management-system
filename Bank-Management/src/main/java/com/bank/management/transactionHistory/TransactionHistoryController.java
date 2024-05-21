@@ -1,4 +1,4 @@
-package com.bank.management.transactionhistory;
+package com.bank.management.transactionHistory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

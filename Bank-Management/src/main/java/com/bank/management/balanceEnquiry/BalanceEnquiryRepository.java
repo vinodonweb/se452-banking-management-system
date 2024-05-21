@@ -1,4 +1,4 @@
-package com.bank.management.balanceenquiry;
+package com.bank.management.balanceEnquiry;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * Repository interface for accessing account balance data.
  */
 @Repository
-public interface BalanceEnquiryRepository extends JpaRepository<BalanceEnquiry, Long> {
+public interface BalanceEnquiryRepository extends JpaRepository<com.bank.management.balanceenquiry.BalanceEnquiry, Long> {
     /**
      * Finds the balance by account number.
      *
