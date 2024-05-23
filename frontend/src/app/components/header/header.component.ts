@@ -38,10 +38,13 @@ export class HeaderComponent implements OnInit {
   toggleAddDeposit() {
     this.uiService.toggleAddDeposit();
   
+  
   }
 
   toggleAddWithdraw() {
     this.uiService.toggleAddWithdraw();
+  
+  
   }
 
   hasRoute(route: string) {

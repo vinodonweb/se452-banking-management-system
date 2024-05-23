@@ -17,6 +17,7 @@ import { AddWithdrawComponent } from './components/add-withdraw/add-withdraw.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { PopmessageComponent } from './components/popmessage/popmessage.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
@@ -38,6 +39,7 @@ const appRoutes: Routes = [
     NavbarComponent,
     HomeComponent,
     CarouselComponent,
+    PopmessageComponent,
   ],
   imports: [
     BrowserModule,

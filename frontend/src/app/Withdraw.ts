@@ -1,4 +1,5 @@
 export interface Withdraw {
+   
     withdrawId?: number;
     accountNumber: string;
     transactionNumber: string;

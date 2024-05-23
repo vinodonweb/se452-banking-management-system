@@ -1,9 +1,11 @@
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { TaskService } from '../../services/task.service';
+import { UiService } from '../../services/ui.service';
 import { Account } from '../../Account';
 import { Deposit } from 'src/app/Deposit';
 import { Withdraw } from 'src/app/Withdraw';
 import { ActivatedRoute, Route, Router } from '@angular/router';
+import { Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-tasks',
@@ -11,19 +13,34 @@ import { ActivatedRoute, Route, Router } from '@angular/router';
   styleUrls: ['./tasks.component.css'],
 })
 export class TasksComponent implements OnInit {
-  [x: string]: any;
+  messagePopup:string;
+  messageClass:string;
+  showPopup=false;
+  showImage=true;
+  subscription:Subscription;
   accounts: Account[] = [];
   deposits: Deposit[] = [];
   withdraws: Withdraw[] = [];
 
-  constructor(private taskService: TaskService,private router:Router,private route:ActivatedRoute) {}
 
-  ngOnInit(): void {
-   this.getTasks();
+  constructor(private taskService: TaskService,private uiService:UiService, private router: Router, private route: ActivatedRoute) {
+    this.subscription = this.uiService
+    .onToggleDeposit()
+    .subscribe((value) => (this.showImage = !value));
+
+    this.subscription = this.uiService
+    .onToggleWithdraw()
+    .subscribe((value) => (this.showImage = !value));
+   }
+
+  ngOnInit() {
+    this.taskService.accounts$.subscribe(accounts => { this.accounts = accounts });
+    this.getTasks();
   }
 
-  getTasks():void {
-    this.taskService.getTasks().subscribe((accounts) => (this.accounts = accounts));
+  getTasks() {
+    this.taskService.getTasks();
+    console.log(this.accounts);
   }
 
   deleteTask(account: Account) {
@@ -39,17 +56,39 @@ export class TasksComponent implements OnInit {
     this.taskService.updateTaskReminder(account).subscribe();
   }
 
-  addDeposit(deposit: Deposit) {
+  async addDeposit(deposit: Deposit):Promise<void> {
     this.taskService.addDeposit(deposit).subscribe((deposit) => this.deposits.push(deposit));
-    
+    this.accounts.forEach(account => {
+      if (account.accountNumber == deposit.accountNumber) {
+        account.balance += deposit.amount;
+      }
+    })
+    this.showPopup=true;
+    this.messagePopup="Deposit successful for account number:"+deposit.accountNumber+" !";
+    this.messageClass="Success";
+    await this.delay(10000);
+    this.showPopup=false;
+
   }
-  addWithdraw(withdraw: Withdraw) {
+  async addWithdraw(withdraw: Withdraw):Promise<void> {
     this.taskService.addWithdraw(withdraw).subscribe((withdraw) => this.withdraws.push(withdraw));
+    this.accounts.forEach(account => {
+      if (account.accountNumber == withdraw.accountNumber) {
+        account.balance -= withdraw.amount;
+      }
+    })
+    this.showPopup=true;
+    this.messagePopup="Withdraw successful for account number:"+withdraw.accountNumber+" !";
+    this.messageClass="Success";
+    await this.delay(10000);
+    this.showPopup=false;
   }
 
-  refreshComponent():void {
-    this.router.routeReuseStrategy.shouldReuseRoute=()=>false;
-    this.router.onSameUrlNavigation='reload';
-    this.router.navigate(['./'],{relativeTo:this.route})
+
+   delay(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }
+
+
+
