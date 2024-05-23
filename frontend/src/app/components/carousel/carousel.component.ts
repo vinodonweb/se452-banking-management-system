@@ -19,7 +19,7 @@ export class CarouselComponent implements OnInit {
 
   linkedin = faLinkedin;
   github=faGithub;
-  instagram=faInstagram
+  instagram=faInstagram;
 
   constructor() { }
 
