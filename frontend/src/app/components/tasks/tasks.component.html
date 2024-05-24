@@ -12,8 +12,16 @@
 <div class="column" style="margin-left: 370px;">
   <app-add-deposit  (onAddDeposit)="addDeposit($event)"></app-add-deposit>
   <app-add-withdraw (onAddWithdraw)="addWithdraw($event)"></app-add-withdraw>
+  <div class="img-box">
+    <br><br>
+    <figure class="image is-1280x1280">
+    <img *ngIf="showImage"  src="assets/deposit.png" alt="">
+    </figure>
   </div>
-
+  </div>
+<div class="column">
+  <app-popmessage messageType={{messageClass}} *ngIf="showPopup" message={{messagePopup}}></app-popmessage>
+</div>
 </div>
 
 

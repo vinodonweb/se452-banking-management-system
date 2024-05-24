@@ -1,7 +1,7 @@
 package com.bank.management;
 
 import com.bank.management.balanceenquiry.BalanceEnquiry;
-import com.bank.management.balanceenquiry.BalanceEnquiryRepository;
+import com.bank.management.balanceEnquiry.BalanceEnquiryRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,66 +1,231 @@
-<h1>CSS-only Carousel</h1>
+<!---
+<div class="image-container">
+       <img  class="carousel__slide" src="assets/img1.png">
+</div>
+-->
 
-<p>This carousel is created with HTML and CSS only.</p>
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
-<section class="carousel" aria-label="Gallery">
-  <ol class="carousel__viewport">
-    <li id="carousel__slide1"
-        tabindex="0"
-        class="carousel__slide">
-        <img src="assets/img1.jpeg">
-      <div class="carousel__snapper">
-        <a href="#carousel__slide4"
-           class="carousel__prev">Go to last slide</a>
-        <a href="#carousel__slide2"
-           class="carousel__next">Go to next slide</a>
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+
+
+<div id="customCarousel1" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-6 ">
+            <div class="detail-box">
+              <br>
+              <br>
+              <div class="heading_container heading_left">
+                <h2>
+                  Amanah <span>Bank</span>
+                </h2>
+                </div>
+         <br><br>
+              <div class="content is-medium">
+              <p>
+                Explore the Features:
+<ul>
+                <li class="has-text-primary"><b>Smart Savings:</b> Automated savings plans to help you reach your goals faster.</li>
+                <li class="has-text-info"><b>24/7 Support:</b> Our dedicated support team is here to assist you around the clock.</li>
+                <li class="has-text-warning"><b> Transactions:</b> Advanced security measures to keep your money safe.</li>
+                </ul>
+              <div class="btn-box">
+                <a href="" class="btn1">
+                  Read More
+                </a>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="img-box">
+              <img src="assets/slider-img.png" alt="">
+            </div>
+          </div>
+        </div>
       </div>
-    </li>
-    <li id="carousel__slide2"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide1"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide3"
-         class="carousel__next">Go to next slide</a>
-    </li>
-    <li id="carousel__slide3"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide2"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide4"
-         class="carousel__next">Go to next slide</a>
-    </li>
-    <li id="carousel__slide4"
-        tabindex="0"
-        class="carousel__slide">
-      <div class="carousel__snapper"></div>
-      <a href="#carousel__slide3"
-         class="carousel__prev">Go to previous slide</a>
-      <a href="#carousel__slide1"
-         class="carousel__next">Go to first slide</a>
-    </li>
-  </ol>
-  <aside class="carousel__navigation">
-    <ol class="carousel__navigation-list">
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide1"
-           class="carousel__navigation-button">Go to slide 1</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide2"
-           class="carousel__navigation-button">Go to slide 2</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide3"
-           class="carousel__navigation-button">Go to slide 3</a>
-      </li>
-      <li class="carousel__navigation-item">
-        <a href="#carousel__slide4"
-           class="carousel__navigation-button">Go to slide 4</a>
-      </li>
-    </ol>
-  </aside>
+    </div>
+
+  </div>
+
+</div>
+<section class="about_section layout_padding">
+  <div class="container  ">
+    <div class="heading_container heading_center">
+      <h2>
+        About <span>Us</span>
+      </h2>
+      <p>
+        Welcome to Amanah Bank, where we redefine banking with our customer-centric approach and innovative financial solutions. Here, we believe in providing banking services that empower individuals and businesses to thrive without the burden of interest. </p>
+    </div>
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class="img-box">
+          <img src="assets/about-img.png" alt="">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <h3>
+            What Sets Us Apart
+          </h3>
+          <p>
+            
+We operate on the principle of fairness and transparency. Unlike traditional banks, we do not charge interest on loans or credit facilities. Instead, we offer flexible financing options and competitive rates, ensuring that our customers can achieve their financial goals without the worry of accruing interest.
+          </p>
+          <p>
+            Whether you're saving for the future, financing a home, or starting a business, we're here to help you succeed. Join us today and discover the freedom of banking without interest.  </p>
+          <a href="">
+            Join us
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- end about section -->
+
+<!-- why section -->
+
+<section class="team_section layout_padding">
+  <div class="container-fluid">
+    <div class="heading_container heading_center">
+      <h2 class="">
+        Our <span> Team</span>
+      </h2>
+    </div>
+
+    <div class="team_container">
+      <div class="row">
+        <div class="col-lg-3 col-sm-6">
+          <div class="box ">
+            <div class="img-box">
+              <img src="assets/team-1.jpeg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Syed Saifuddin
+              </h5>
+              <p>
+               Product Manager
+              </p>
+            </div>
+            <div class="social_box">
+              <a href="https://www.instagram.com/saif_695/">
+                <fa-icon [icon]="instagram"></fa-icon>
+              </a>
+              <a href="https://www.linkedin.com/in/syed-saifuddin-7b98377b/">
+                <fa-icon [icon]="linkedin"></fa-icon>
+              </a>
+              <a href="https://github.com/saifuddinsyed60">
+                <fa-icon [icon]="github"></fa-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="box ">
+            <div class="img-box">
+              <img src="assets/team-2.jpeg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+               Vinod Sharma
+              </h5>
+              <p>
+                IT Manager
+              </p>
+            </div>
+            <div class="social_box">
+              <a href="#">
+                <fa-icon [icon]="instagram"></fa-icon>
+              </a>
+              <a href="https://www.linkedin.com/in/vinodonweb/">
+                <fa-icon [icon]="linkedin"></fa-icon>
+              </a>
+              <a href="https://github.com/vinodonweb">
+                <fa-icon [icon]="github"></fa-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="box ">
+            <div class="img-box">
+              <img src="assets/team-3.jpeg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Hari Hara Sudhan
+              </h5>
+              <p>
+                System Administrator
+              </p>
+            </div>
+            <div class="social_box">
+              <a href="#">
+                <fa-icon [icon]="instagram"></fa-icon>
+              </a>
+              <a href="https://www.linkedin.com/in/hari-hara-sudhan-k/">
+                <fa-icon [icon]="linkedin"></fa-icon>
+              </a>
+              <a href="https://github.com/hari-hs">
+                <fa-icon [icon]="github"></fa-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-sm-6">
+          <div class="box ">
+            <div class="img-box">
+              <img src="assets/team-4.jpeg" class="img1" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+               Shlok Kadakia
+              </h5>
+              <p>
+                Marketing Head
+              </p>
+            </div>
+            <div class="social_box">
+              <a href="#">
+                <fa-icon [icon]="instagram"></fa-icon>
+              </a>
+              <a href="https://www.linkedin.com/in/shlok-kadakia/">
+                <fa-icon [icon]="linkedin"></fa-icon>
+              </a>
+              <a href="https://github.com/skadakia01">
+                <fa-icon [icon]="github"></fa-icon>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+<script type="text/javascript" src="assets/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="assets/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="assets/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+
+     

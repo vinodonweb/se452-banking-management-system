@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Account } from '../Account';
 import { Deposit } from '../Deposit';
 import { Withdraw } from '../Withdraw';
+
+import { Router } from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -16,11 +18,13 @@ const httpOptions = {
 })
 export class TaskService {
   private apiUrl = 'http://localhost:8080/api';
+  public   refresh: Subject<Account[]>=new Subject<Account[]>();
+  accounts$=this.refresh.asObservable();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private router:Router) {}
 
-  getTasks(): Observable<Account[]> {
-    return this.http.get<Account[]>(this.apiUrl+"/account");
+   getTasks() {
+    return this.http.get<Account[]>(this.apiUrl+"/account").subscribe(accounts=>this.refresh.next(accounts));
   }
 
   deleteTask(account: Account): Observable<Account> {
@@ -34,11 +38,13 @@ export class TaskService {
   }
 
   addDeposit(deposit: Deposit): Observable<Deposit> {
-    return this.http.post<Deposit>(this.apiUrl+"/deposit", deposit, httpOptions);
+    var post= this.http.post<Deposit>(this.apiUrl+"/deposit", deposit, httpOptions);
+    return post;
   }
 
   addWithdraw(withdraw: Withdraw): Observable<Withdraw> {
-    return this.http.post<Withdraw>(this.apiUrl+"/withdraw", withdraw, httpOptions);
+    var post= this.http.post<Withdraw>(this.apiUrl+"/withdraw", withdraw, httpOptions);
+    return post;
   }
 
   
