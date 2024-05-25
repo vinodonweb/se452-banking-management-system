@@ -19,12 +19,12 @@ public class TransactionHistoryService {
     private static final Pattern ACCOUNT_NUMBER_PATTERN = Pattern.compile("\\d{10}");
 
 
-    public List<com.bank.management.transactionhistory.TransactionHistory> getTransactionHistoryByAccountNumber(String accountNumber) {
+    public List<com.bank.management.transactionHistory.TransactionHistory> getTransactionHistoryByAccountNumber(String accountNumber) {
         // Validate account number
         validateAccountNumber(accountNumber);
 
         // Retrieve transaction history for the given account number
-        List<com.bank.management.transactionhistory.TransactionHistory> transactions = transactionHistoryRepository.findByAccountNumber(accountNumber);
+        List<com.bank.management.transactionHistory.TransactionHistory> transactions = transactionHistoryRepository.findByAccountNumber(accountNumber);
 
         // Validate that transactions exist
         if (transactions == null || transactions.isEmpty()) {

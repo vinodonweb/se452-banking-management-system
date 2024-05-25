@@ -1,7 +1,7 @@
 package com.bank.management;
 
-import com.bank.management.TransactionHistory.TransactionHistory;
-import com.bank.management.TransactionHistory.TransactionHistoryRepository;
+import com.bank.management.transactionHistory.TransactionHistory;
+import com.bank.management.transactionHistory.TransactionHistoryRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
