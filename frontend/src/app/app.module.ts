@@ -18,11 +18,14 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { PopmessageComponent } from './components/popmessage/popmessage.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
-  {path: 'deposit',component:TasksComponent}
+  {path: 'deposit',component:TasksComponent},
+  {path: 'dashboard',component:DashboardComponent},
 ];
 
 @NgModule({
@@ -40,6 +43,7 @@ const appRoutes: Routes = [
     HomeComponent,
     CarouselComponent,
     PopmessageComponent,
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,
