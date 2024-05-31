@@ -1,10 +1,12 @@
 package com.bank.management;
 
-import com.bank.management.login.LoginRepository;
 import com.bank.management.login.Login;
+import com.bank.management.login.LoginFailedException;
 import com.bank.management.login.LoginService;
-import org.junit.jupiter.api.Test;
+import com.bank.management.signup.Signup;
+import com.bank.management.signup.SignupRepository;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
@@ -17,7 +19,7 @@ import static org.mockito.Mockito.when;
 public class LoginTest {
 
     @Mock
-    private LoginRepository loginRepository;
+    private SignupRepository signupRepository;
 
     @InjectMocks
     private LoginService loginService;
@@ -29,11 +31,11 @@ public class LoginTest {
         login.setUsername("testUser");
         login.setPassword("testPassword");
 
-        Login storedLogin = new Login();
-        storedLogin.setUsername("testUser");
-        storedLogin.setPassword("testPassword");
+        Signup storedSignup = new Signup();
+        storedSignup.setUsername("testUser");
+        storedSignup.setPassword("testPassword");
 
-        when(loginRepository.findByUsername("testUser")).thenReturn(storedLogin);
+        when(signupRepository.findByUsername("testUser")).thenReturn(storedSignup);
 
         // Act
         boolean result = loginService.authenticate(login);
@@ -49,12 +51,36 @@ public class LoginTest {
         login.setUsername("testUser");
         login.setPassword("wrongPassword");
 
-        when(loginRepository.findByUsername("testUser")).thenReturn(null);
+        Signup storedSignup = new Signup();
+        storedSignup.setUsername("testUser");
+        storedSignup.setPassword("testPassword");
 
-        // Act
-        boolean result = loginService.authenticate(login);
+        when(signupRepository.findByUsername("testUser")).thenReturn(storedSignup);
 
-        // Assert
-        assertFalse(result);
+        // Act & Assert
+        try {
+            loginService.authenticate(login);
+            assertFalse(true, "Expected LoginFailedException to be thrown");
+        } catch (LoginFailedException e) {
+            assertTrue(true);
+        }
+    }
+
+    @Test
+    public void testAuthenticate_WithNonExistentUser_ReturnsFalse() {
+        // Arrange
+        Login login = new Login();
+        login.setUsername("nonExistentUser");
+        login.setPassword("somePassword");
+
+        when(signupRepository.findByUsername("nonExistentUser")).thenReturn(null);
+
+        // Act & Assert
+        try {
+            loginService.authenticate(login);
+            assertFalse(true, "Expected LoginFailedException to be thrown");
+        } catch (LoginFailedException e) {
+            assertTrue(true);
+        }
     }
 }

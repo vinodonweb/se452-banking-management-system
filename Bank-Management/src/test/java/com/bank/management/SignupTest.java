@@ -60,4 +60,47 @@ public class SignupTest {
         // Assert
         assertFalse(result);
     }
+
+    @Test
+    public void testRegister_WithDifferentCaseAccountType_ReturnsTrue() {
+        // Arrange
+        Signup signupLowerCase = new Signup();
+        signupLowerCase.setUsername("lowercaseUser");
+        signupLowerCase.setPassword("password");
+        signupLowerCase.setAccountType(Signup.AccountType.valueOf("savings".toUpperCase()));
+
+        Signup signupUpperCase = new Signup();
+        signupUpperCase.setUsername("uppercaseUser");
+        signupUpperCase.setPassword("password");
+        signupUpperCase.setAccountType(Signup.AccountType.valueOf("SAVINGS".toUpperCase()));
+
+        when(signupRepository.findByUsername("lowercaseUser")).thenReturn(null);
+        when(signupRepository.findByUsername("uppercaseUser")).thenReturn(null);
+
+        // Act
+        boolean resultLowerCase = signupService.register(signupLowerCase);
+        boolean resultUpperCase = signupService.register(signupUpperCase);
+
+        // Assert
+        assertTrue(resultLowerCase);
+        assertTrue(resultUpperCase);
+    }
+
+    @Test
+    public void testRegister_WithInvalidAccountType_ThrowsException() {
+        // Arrange
+        Signup signup = new Signup();
+        signup.setUsername("invalidAccountTypeUser");
+        signup.setPassword("password");
+
+        Exception exception = null;
+        try {
+            signup.setAccountType(Signup.AccountType.valueOf("INVALID"));
+        } catch (IllegalArgumentException e) {
+            exception = e;
+        }
+
+        // Assert
+        assertTrue(exception instanceof IllegalArgumentException);
+    }
 }

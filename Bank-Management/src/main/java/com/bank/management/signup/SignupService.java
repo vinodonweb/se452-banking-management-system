@@ -13,14 +13,23 @@ public class SignupService {
 
     public boolean register(Signup signup) {
         log.traceEntry("Enter register", signup.getUsername());
-        if (signupRepository.findByUsername(signup.getUsername()) == null) {
-            signupRepository.save(signup);
-            log.traceExit("Exit register", true);
-            return true;
+
+        if (signupRepository.findByUsername(signup.getUsername()) != null) {
+            log.traceExit("Username already exists");
+            throw new UsernameAlreadyExistsException("Username already exists: " + signup.getUsername());
         }
-        log.traceExit("Exit register", false);
-        return false;
+
+        if (signupRepository.findByEmail(signup.getEmail()) != null) {
+            log.traceExit("Email already exists");
+            throw new EmailAlreadyExistsException("Email already exists: " + signup.getEmail());
+        }
+
+        signupRepository.save(signup);
+        log.info("saved user{}", signup);
+        log.traceExit("Exit register", true);
+        return true;
     }
+
 
     // Other signup-related methods can be added here
 }
