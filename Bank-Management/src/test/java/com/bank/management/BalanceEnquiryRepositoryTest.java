@@ -1,6 +1,5 @@
 package com.bank.management;
-
-import com.bank.management.balanceenquiry.BalanceEnquiry;
+import com.bank.management.balanceEnquiry.BalanceEnquiry;
 import com.bank.management.balanceEnquiry.BalanceEnquiryRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -24,7 +23,8 @@ public class BalanceEnquiryRepositoryTest {
         // Create a new BalanceEnquiry instance and save it
         BalanceEnquiry balanceEnquiry = new BalanceEnquiry();
         balanceEnquiry.setAccountNumber("1234567890");  // Set account number
-        balanceEnquiry.setBalance(1000.00);
+        balanceEnquiry.setBalanceAmount(1000.00);  // Set balance amount
+        balanceEnquiry.setCurrency("USD");  // Set currency
 
         long beforeSave = balanceEnquiryRepository.count();
         balanceEnquiryRepository.save(balanceEnquiry);
