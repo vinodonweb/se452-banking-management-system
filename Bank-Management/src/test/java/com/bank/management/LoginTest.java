@@ -1,88 +1,86 @@
 package com.bank.management;
 
-import com.bank.management.login.*;
-import com.bank.management.security.*;
-import com.bank.management.signup.*;
-import org.junit.jupiter.api.*;
-import org.junit.jupiter.api.extension.*;
-import org.mockito.*;
-import org.mockito.junit.jupiter.*;
-import org.springframework.http.*;
-import org.springframework.security.authentication.*;
+import com.bank.management.login.Login;
+import com.bank.management.login.LoginFailedException;
+import com.bank.management.login.LoginService;
+import com.bank.management.signup.Signup;
+import com.bank.management.signup.SignupRepository;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.jupiter.api.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class LoginTest {
 
-    @InjectMocks
-    private LoginController loginController;
-
     @Mock
+    private SignupRepository signupRepository;
+
+    @InjectMocks
     private LoginService loginService;
 
-    @Mock
-    private AuthenticationManager manager;
+    @Test
+    public void testAuthenticate_WithValidLogin_ReturnsTrue() {
+        // Arrange
+        Login login = new Login();
+        login.setUsername("testUser");
+        login.setPassword("testPassword");
 
-    @Mock
-    private JwtHelper helper;
+        Signup storedSignup = new Signup();
+        storedSignup.setUsername("testUser");
+        storedSignup.setPassword("testPassword");
 
-    @BeforeEach
-    public void setUp() {
-        MockitoAnnotations.openMocks(this);
+        when(signupRepository.findByUsername("testUser")).thenReturn(storedSignup);
+
+        // Act
+        boolean result = loginService.authenticate(login);
+
+        // Assert
+        assertTrue(result);
     }
 
     @Test
-    public void testAuthenticate_Success() {
-        Login login = new Login("username", "password");
-        Signup user = new Signup();
-        user.setUsername("username");
-        user.setPassword("password");
-        when(loginService.authenticate(login)).thenReturn(user);
-        when(helper.generateToken("username")).thenReturn("token");
+    public void testAuthenticate_WithInvalidLogin_ReturnsFalse() {
+        // Arrange
+        Login login = new Login();
+        login.setUsername("testUser");
+        login.setPassword("wrongPassword");
 
-        ResponseEntity<ResponseAPI<JWTResponse>> responseEntity = loginController.authenticate(login);
+        Signup storedSignup = new Signup();
+        storedSignup.setUsername("testUser");
+        storedSignup.setPassword("testPassword");
 
-        assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
-        assertEquals("Login successful", responseEntity.getBody().getMessage());
-        assertEquals("token", responseEntity.getBody().getData().getJwtToken());
-        assertEquals("username", responseEntity.getBody().getData().getUsername());
+        when(signupRepository.findByUsername("testUser")).thenReturn(storedSignup);
+
+        // Act & Assert
+        try {
+            loginService.authenticate(login);
+            assertFalse(true, "Expected LoginFailedException to be thrown");
+        } catch (LoginFailedException e) {
+            assertTrue(true);
+        }
     }
 
     @Test
-    public void testAuthenticate_UserNotFound() {
-        Login login = new Login("nonExistingUsername", "password");
-        when(loginService.authenticate(login)).thenThrow(new LoginFailedException("User not found: " + login.getUsername()));
+    public void testAuthenticate_WithNonExistentUser_ReturnsFalse() {
+        // Arrange
+        Login login = new Login();
+        login.setUsername("nonExistentUser");
+        login.setPassword("somePassword");
 
-        ResponseEntity<ResponseAPI<JWTResponse>> responseEntity = loginController.authenticate(login);
+        when(signupRepository.findByUsername("nonExistentUser")).thenReturn(null);
 
-        assertEquals(HttpStatus.UNAUTHORIZED, responseEntity.getStatusCode());
-        assertEquals("User not found: nonExistingUsername", responseEntity.getBody().getMessage());
-        assertEquals(null, responseEntity.getBody().getData());
-    }
-
-    @Test
-    public void testAuthenticate_InvalidPassword() {
-        Login login = new Login("existingUsername", "wrongPassword");
-        when(loginService.authenticate(login)).thenThrow(new LoginFailedException("Invalid password for user: " + login.getUsername()));
-
-        ResponseEntity<ResponseAPI<JWTResponse>> responseEntity = loginController.authenticate(login);
-
-        assertEquals(HttpStatus.UNAUTHORIZED, responseEntity.getStatusCode());
-        assertEquals("Invalid password for user: existingUsername", responseEntity.getBody().getMessage());
-        assertEquals(null, responseEntity.getBody().getData());
-    }
-
-    @Test
-    public void testAuthenticate_InternalServerError() {
-        Login login = new Login("existingUsername", "password");
-        when(loginService.authenticate(login)).thenThrow(new RuntimeException("Some internal error"));
-
-        ResponseEntity<ResponseAPI<JWTResponse>> responseEntity = loginController.authenticate(login);
-
-        assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, responseEntity.getStatusCode());
-        assertEquals("Error during login", responseEntity.getBody().getMessage());
-        assertEquals(null, responseEntity.getBody().getData());
+        // Act & Assert
+        try {
+            loginService.authenticate(login);
+            assertFalse(true, "Expected LoginFailedException to be thrown");
+        } catch (LoginFailedException e) {
+            assertTrue(true);
+        }
     }
 }

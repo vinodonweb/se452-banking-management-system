@@ -1,11 +1,13 @@
 package com.bank.management.signup;
 
-import com.fasterxml.jackson.databind.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import jakarta.persistence.*;
-import lombok.*;
-import org.hibernate.annotations.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
-import java.time.*;
+import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -14,7 +16,6 @@ import java.time.*;
 public class Signup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Signup_id", unique = true, nullable = false)
     private Long signupId;
 
     @Column(name = "username")
