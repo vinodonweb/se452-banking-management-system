@@ -1,8 +1,9 @@
 package com.bank.management.signup;
 
-import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import lombok.extern.log4j.*;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.security.crypto.password.*;
+import org.springframework.stereotype.*;
 
 @Service
 @Log4j2
@@ -10,6 +11,10 @@ public class SignupService {
 
     @Autowired
     private SignupRepository signupRepository;
+
+    // Encrypt the password
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     public boolean register(Signup signup) {
         log.traceEntry("Enter register", signup.getUsername());
@@ -24,8 +29,13 @@ public class SignupService {
             throw new EmailAlreadyExistsException("Email already exists: " + signup.getEmail());
         }
 
+
+        //Encrypt password before saving
+        String encryptedPassword = passwordEncoder.encode(signup.getPassword());
+        signup.setPassword(encryptedPassword);
+
         signupRepository.save(signup);
-        log.info("saved user{}", signup);
+        log.info("saved user {}", signup);
         log.traceExit("Exit register", true);
         return true;
     }
