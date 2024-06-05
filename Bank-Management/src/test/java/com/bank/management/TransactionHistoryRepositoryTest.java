@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -26,14 +27,14 @@ public class TransactionHistoryRepositoryTest {
         transaction.setAccountNumber("1234567890");  // Set account number
         transaction.setAmount(100.00);
         transaction.setTransactionType("deposit");
-        transaction.setTransactionDate("2024-05-19");
+        transaction.setTimestamp(LocalDateTime.now()); // Set timestamp
 
         long beforeSave = transactionHistoryRepository.count();
         transactionHistoryRepository.save(transaction);
         long afterSave = transactionHistoryRepository.count();
 
         // Retrieve the transactions using the account number
-        List<TransactionHistory> retrievedTransactions = transactionHistoryRepository.findByAccountNumber("1234567890");
+        List<TransactionHistory> retrievedTransactions = transactionHistoryRepository.findTransactionsByAccountNumber("1234567890");
 
         // Assertions to check if the retrieved transactions are as expected
         assertFalse(retrievedTransactions.isEmpty(), "Transaction history should not be empty");

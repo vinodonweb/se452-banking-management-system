@@ -28,7 +28,7 @@ public class DashboardService {
 
     public Dashboard getDashboardData(Long accountId) {
         Dashboard data = new Dashboard();
-       // data.setTotalBalance(balanceEnquiryService.getBalance(accountId));
+        // data.setTotalBalance(balanceEnquiryService.getBalance(accountId));
         //data.setNumberOfTransactions(transactionService.getTransactionHistory(accountId));
         data.setTotalDeposits(depositService.sumDepositsByAccountId(accountId));
         data.setNumberOfWithdrawals(WithdrawService.countWithdrawalsByAccountId(accountId));
