@@ -1,46 +1,24 @@
-package com.bank.management.balanceenquiry;
+package com.bank.management.balanceEnquiry;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.*;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@AllArgsConstructor
-@NoArgsConstructor
+@Table(name = "balance_enquiry")
 public class BalanceEnquiry {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long accountId;  // Unique identifier for the account
-    private String accountNumber;  // Account number
-    private Double balance;  // Current balance of the account
+    @Column(name = "account_id")
+    private Long id;
 
-    // Getters and setters
-    public Long getAccountId() {
-        return accountId;
-    }
+    @Column(name = "account_number", unique = true, nullable = false)
+    private String accountNumber;
 
-    public void setAccountId(Long accountId) {
-        this.accountId = accountId;
-    }
+    @Column(name = "balance", nullable = false)
+    private Double balanceAmount;
 
-    public String getAccountNumber() {
-        return accountNumber;
-    }
-
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
-    }
-
-    public Double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(Double balance) {
-        this.balance = balance;
-    }
+    @Column(name = "currency", nullable = false)
+    private String currency;
 }
