@@ -1,44 +1,31 @@
 package com.bank.management.balanceEnquiry;
 
+import lombok.AllArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.regex.Pattern;
 
-/**
- * Service for managing balance enquiries.
- */
 @Service
+@Log4j2
+@AllArgsConstructor
 public class BalanceEnquiryService {
 
     @Autowired
     private BalanceEnquiryRepository balanceEnquiryRepository;
 
-    // Regular expression for validating account number (10-digit numeric string)
     private static final Pattern ACCOUNT_NUMBER_PATTERN = Pattern.compile("\\d{10}");
 
- 
     public double getBalanceByAccountNumber(String accountNumber) {
-        // Validate account number
         validateAccountNumber(accountNumber);
-
-        // Retrieve balance for the given account number
         Double balance = balanceEnquiryRepository.findBalanceByAccountNumber(accountNumber);
-
-        // Validate that the account exists and balance is not null
         if (balance == null) {
             throw new IllegalStateException("Account not found for account number: " + accountNumber);
         }
-
         return balance;
     }
 
-    /**
-     * Validates the account number.
-     *
-     * @param accountNumber the account number to validate
-     * @throws IllegalArgumentException if the account number is invalid
-     */
     private void validateAccountNumber(String accountNumber) {
         if (accountNumber == null || accountNumber.trim().isEmpty()) {
             throw new IllegalArgumentException("Account number cannot be null or empty.");
