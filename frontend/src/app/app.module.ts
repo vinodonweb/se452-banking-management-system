@@ -18,25 +18,20 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { PopmessageComponent } from './components/popmessage/popmessage.component';
-<<<<<<< HEAD
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
-=======
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
->>>>>>> ca28aad8abcc14d9f8f196a082dee77557269395
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   {path: 'deposit',component:TasksComponent},
-<<<<<<< HEAD
   {path: 'login',component:LoginComponent},
   {path: 'signup',component:SignupComponent},
 
-=======
+
   {path: 'dashboard',component:DashboardComponent},
->>>>>>> ca28aad8abcc14d9f8f196a082dee77557269395
 ];
 
 @NgModule({
@@ -54,12 +49,8 @@ const appRoutes: Routes = [
     HomeComponent,
     CarouselComponent,
     PopmessageComponent,
-<<<<<<< HEAD
     SignupComponent,
     LoginComponent,
-=======
-    DashboardComponent,
->>>>>>> ca28aad8abcc14d9f8f196a082dee77557269395
   ],
   imports: [
     BrowserModule,

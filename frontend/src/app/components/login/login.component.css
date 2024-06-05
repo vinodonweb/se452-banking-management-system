@@ -1,0 +1,27 @@
+body, .hero.is-fullheight {
+    background-color: #121212;
+    /* color: #ffffff; */
+  }
+  .box {
+    background-color: #1f1f1f;
+    color: #ffffff;
+  }
+  .input, .select select {
+    background-color: #2c2c2c;
+    color: #ffffff;
+    border: 1px solid #444;
+  }
+  .input::placeholder, .select select option {
+    color: #aaaaaa;
+  }
+  .button.is-primary {
+    background-color: #3273dc;
+    color: #ffffff;
+    border: none;
+  }
+  .button.is-primary:hover {
+    background-color: #275ba1;
+  }
+  .label {
+    color: #ffffff;
+  }

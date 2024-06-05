@@ -1,35 +1,35 @@
 <html>
-    <head>
-        <link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
-    </head>
-    <body>
-        <nav class="navbar has-shadow">
-            <div class="navbar-brand">
-                <a class="navbar-item">
-                    <img src="https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297_1280.png" style="max-height:50px ;margin-right:40px;">
-                </a>
-            </div>
-            <div class="navbar-menu" id="nav-links">
-<div class="navbar-start">
-    <a routerLink="/" class="navbar-item">Home</a>
-    <a routerLink="/dashboard" class="navbar-item">Dashboard</a>
-    <a routerLink="/deposit"  class="navbar-item">Deposit/Withdraw</a>
-    <a  class="navbar-item">Transaction History</a>
-    <a  class="navbar-item">Feedback</a>
-</div>
-<div class="navbar-end">
-    <div class="navbar-item">
-      <div class="buttons">
-        <a routerLink="/signup" class="button is-primary">
-          <strong>Sign up</strong>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css">
+</head>
+<body>
+<nav class="navbar is-fixed-top has-shadow">
+    <div class="navbar-brand">
+        <a class="navbar-item">
+            <img src="https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297_1280.png" style="max-height:50px ;margin-right:40px;">
         </a>
-        <a routerLink="/login" class="button is-light">
-          Log in
-        </a>
-      </div>
     </div>
-  </div>
+    <div class="navbar-menu" id="nav-links">
+        <div class="navbar-start">
+            <a routerLink="/" class="navbar-item">Home</a>
+            <a routerLink="/dashboard" class="navbar-item">Dashboard</a>
+            <a routerLink="/deposit" class="navbar-item">Deposit/Withdraw</a>
+            <a class="navbar-item">Transaction History</a>
+            <a class="navbar-item">Feedback</a>
+        </div>
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons is-right">
+                    <a routerLink="/signup" class="button is-primary">
+                        <strong>Sign up</strong>
+                    </a>
+                    <a routerLink="/login" class="button is-light"> Log in </a>
+                </div>
             </div>
-        </nav>
-    </body>
+        </div>
+    </div>
+</nav>
+
+<!-- Your page content here -->
+</body>
 </html>
