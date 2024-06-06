@@ -21,6 +21,7 @@ import { PopmessageComponent } from './components/popmessage/popmessage.componen
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TransactionHistoryComponent } from './components/transaction-history/transaction-history.component';
 
 
 const appRoutes: Routes = [
@@ -32,6 +33,7 @@ const appRoutes: Routes = [
 
 
   {path: 'dashboard',component:DashboardComponent},
+  {path:'transactionHistory',component:TransactionHistoryComponent}
 ];
 
 @NgModule({
@@ -51,6 +53,7 @@ const appRoutes: Routes = [
     PopmessageComponent,
     SignupComponent,
     LoginComponent,
+    TransactionHistoryComponent,
   ],
   imports: [
     BrowserModule,
