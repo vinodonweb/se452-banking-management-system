@@ -20,10 +20,10 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '20' 
+        node-version: '16' 
 
     - name: Install dependencies
-      run: npm install --legacy-peer-deps  --openssl-legacy-provider
+      run: npm install --legacy-peer-deps
 
     - name: Build Angular project
       run: npm run build -- --prod --output-path docs --base-href /se452-banking-management-system/
