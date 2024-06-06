@@ -20,6 +20,9 @@ public class TransactionHistory {
     @Column(name = "transaction_id")
     private Long id;
 
+    @Column(name="transaction_number")
+    private String transactionNumber;
+
     @Column(name = "account_number")
     private String accountNumber;
 
