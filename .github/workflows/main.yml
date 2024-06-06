@@ -23,7 +23,7 @@ jobs:
         node-version: '20' 
 
     - name: Install dependencies
-      run: npm install --legacy-peer-deps
+      run: npm install --openssl-legacy-provider
 
     - name: Build Angular project
       run: npm run build -- --prod --output-path docs --base-href /se452-banking-management-system/
