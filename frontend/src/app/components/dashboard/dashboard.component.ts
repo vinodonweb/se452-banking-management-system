@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Account } from 'src/app/Account';
@@ -7,6 +7,8 @@ import { Deposit } from 'src/app/Deposit';
 import { TaskService } from 'src/app/services/task.service';
 import { UiService } from 'src/app/services/ui.service';
 import { Withdraw } from 'src/app/Withdraw';
+import { CommonModule } from '@angular/common'
+
 
 @Component({
   selector: 'app-dashboard',
@@ -21,6 +23,7 @@ export class DashboardComponent implements OnInit {
   showImage=true;
   subscription:Subscription;
   dashboards: Dashboard[];
+
   deposits: Deposit[] = [];
   withdraws: Withdraw[] = [];
 
@@ -43,6 +46,7 @@ export class DashboardComponent implements OnInit {
   getTasks() {
     this.taskService.getDashboard();
     console.log(this.dashboards);
+    
   }
  
 
