@@ -59,7 +59,7 @@ export class AddWithdrawComponent implements OnInit {
 
   generateTransactionNumber(): string {
     const timestamp = Date.now(); // Get current timestamp
-    const prefix = 'D'; // Prefix for transaction number
+    const prefix = 'W'; // Prefix for transaction number
 
     // Generate a unique transaction number using timestamp
     const transactionNumber = `${prefix}${timestamp}`;
