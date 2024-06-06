@@ -1,12 +1,15 @@
+<br>
+<br>
+
 <div class="table-container">
-    <table *ngFor="let dashboard of dashboards" class="table is-striped is-large is-hoverable is-fullwidth">
-      <tr>
+    <table  class="table is-striped is-large is-hoverable is-fullwidth">
+      <tr >
         <th>
       <h3 class="has-text-primary is-medium" style="font-size: x-large;">
-       <b> Dashboard Id: </b>{{ dashboard.id}}
+       <b> Dashboard Id: </b>{{ dashboards[0].id}}
       </h3>
-      <p class="has-text-danger" style="font-size: x-large;"> <b>No. of transactions: </b> {{ dashboard.numberOfTransactions }}</p>
-      <p  class="has-text-warning" style="font-size: x-large;"> <b>No. of Withdrawals: </b> ${{ dashboard.numberOfWithdrawals }}</p>
+      <p class="has-text-danger" style="font-size: x-large;"> <b>No. of transactions: </b> {{ dashboards[0].numberOfTransactions }}</p>
+      <p  class="has-text-warning" style="font-size: x-large;"> <b>No. of Withdrawals: </b> ${{ dashboards[0].numberOfWithdrawals }}</p>
       <br>
     
         </th>
