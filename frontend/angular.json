@@ -6,7 +6,7 @@
     "angular-crash": {
       "projectType": "application",
       "schematics": {},
-      "root": "",
+      "root": "src",
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
@@ -119,6 +119,5 @@
         }
       }
     }
-  },
-  "defaultProject": "angular-crash"
+  }
 }
