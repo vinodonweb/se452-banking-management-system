@@ -1,59 +1,68 @@
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, Subject } from 'rxjs';
-import { Account } from '../Account';
-import { Deposit } from '../Deposit';
-import { Withdraw } from '../Withdraw';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
-import { Router } from '@angular/router';
-import { Dashboard } from '../Dashboard';
+import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ButtonComponent } from './components/button/button.component';
+import { TasksComponent } from './components/tasks/tasks.component';
+import { TaskItemComponent } from './components/task-item/task-item.component';
+import { AddDepositComponent } from './components/add-deposit/add-deposit.component';
+import { AboutComponent } from './components/about/about.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { AddWithdrawComponent } from './components/add-withdraw/add-withdraw.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { HomeComponent } from './components/home/home.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { PopmessageComponent } from './components/popmessage/popmessage.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { TransactionHistoryComponent } from './components/transaction-history/transaction-history.component';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json',
-  }),
-};
 
-@Injectable({
-  providedIn: 'root',
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'about', component: AboutComponent },
+  {path: 'deposit',component:TasksComponent},
+  {path: 'login',component:LoginComponent},
+  {path: 'signup',component:SignupComponent},
+
+
+  {path: 'dashboard',component:DashboardComponent},
+  {path:'transactionHistory',component:TransactionHistoryComponent}
+];
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    ButtonComponent,
+    TasksComponent,
+    TaskItemComponent,
+    AddDepositComponent,
+    AboutComponent,
+    FooterComponent,
+    AddWithdrawComponent,
+    NavbarComponent,
+    HomeComponent,
+    CarouselComponent,
+    PopmessageComponent,
+    SignupComponent,
+    LoginComponent,
+    TransactionHistoryComponent,
+  ],
+  imports: [
+    BrowserModule,
+    FontAwesomeModule,
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes, { enableTracing: true }),
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class TaskService {
-  private apiUrl = 'http://localhost:8081/api';
-  public   refresh: Subject<Account[]>=new Subject<Account[]>();
-  public   refreshDashboard: Subject<Dashboard[]>=new Subject<Dashboard[]>();
-  accounts$=this.refresh.asObservable();
-  dashboard$=this.refreshDashboard.asObservable();
-
-  constructor(private http: HttpClient,private router:Router) {}
-
-   getTasks() {
-    return this.http.get<Account[]>(this.apiUrl+"/account").subscribe(accounts=>this.refresh.next(accounts));
-  }
-
-  getDashboard() {
-    return this.http.get<Dashboard[]>(this.apiUrl+"/dashboard").subscribe(dashboard=>this.refreshDashboard.next(dashboard));
-  }
-
-
-  deleteTask(account: Account): Observable<Account> {
-    const url = `${this.apiUrl}/${account.accountId}`;
-    return this.http.delete<Account>(url);
-  }
-
-  updateTaskReminder(account: Account): Observable<Account> {
-    const url = `${this.apiUrl}/${account.accountId}`;
-    return this.http.put<Account>(url, account, httpOptions);
-  }
-
-  addDeposit(deposit: Deposit): Observable<Deposit> {
-    var post= this.http.post<Deposit>(this.apiUrl+"/deposit", deposit, httpOptions);
-    return post;
-  }
-
-  addWithdraw(withdraw: Withdraw): Observable<Withdraw> {
-    var post= this.http.post<Withdraw>(this.apiUrl+"/withdraw", withdraw, httpOptions);
-    return post;
-  }
-
-  
-}
+export class AppModule {}
