@@ -1,0 +1,47 @@
+<br><br>
+<h1 class="title is-1">Transaction History</h1>
+<div class="field has-addons">
+    <div class="control">
+      <input class="input" type="text" id="accountNumber" [(ngModel)]="accountNumber" placeholder="Account Number">
+    </div>
+    <div class="control">
+      <button type="submit" class="button is-info" (click)="getTransactions()">
+        Search
+      </button>
+    </div>
+   
+   
+  </div>
+  <progress class="progress is-info" value="100" max="100">
+    45%
+  </progress>
+  <table class="table">
+    <thead>
+      <tr>
+        <th><abbr title="TransactionNumber">Account Number</abbr></th>
+        <th><abbr title="TransactionNumber">Transaction Number</abbr></th>
+        <th><abbr title="TransactionType"></abbr>Transaction Type</th>
+        <th><abbr title="Amount">Amount</abbr></th>
+        <th><abbr title="Time">Time</abbr></th>
+      
+      
+      </tr>
+    </thead>
+    
+    <tbody>
+      <tr *ngFor="let transaction of transactions">
+        <td>
+            {{transaction.accountNumber}}
+        </td>
+       
+        <td>
+            {{transaction.transactionNumber}}
+        </td>
+        <td>{{transaction.transactionType}}</td>
+        <td>{{transaction.amount}}</td>
+        <td>{{transaction.timestamp}}</td>
+       
+      </tr>
+  
+    </tbody>
+  </table>
