@@ -14,7 +14,7 @@ public class LoginController {
     @Autowired
     private LoginService loginService;
 
-    @PostMapping("/authenticate")
+    @PostMapping
     public ResponseAPI<String> authenticate(@RequestBody Login login) {
         try {
             loginService.authenticate(login);
