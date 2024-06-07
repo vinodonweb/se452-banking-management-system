@@ -1,10 +1,7 @@
 package com.bank.management.dashBoard;
 
-import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.log4j.*;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/dashboard")
@@ -13,16 +10,16 @@ import java.util.List;
 
 public class DashboardController {
 
-    @Autowired
-    private DashboardService dashboardService;
+//    @Autowired
+//    private DashboardService dashboardService;
 
 //    @GetMapping
 //    public Dashboard getDashboardData(@RequestParam Long accountId) {
 //        return dashboardService.getDashboardData(accountId);
 //    }
 
-    @GetMapping
-    public List<Dashboard> getDashboard() {
-        return dashboardService.getDashboard();
-    }
+//    @GetMapping
+//    public List<Dashboard> getDashboard() {
+//        return dashboardService.getDashboard();
+//    }
 }
