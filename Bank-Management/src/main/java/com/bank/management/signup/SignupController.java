@@ -14,7 +14,7 @@ public class SignupController {
     @Autowired
     private SignupService signupService;
 
-    @PostMapping("/register")
+    @PostMapping
     public ResponseAPI<Signup> register(@RequestBody Signup signup) {
         try {
             signupService.register(signup);
