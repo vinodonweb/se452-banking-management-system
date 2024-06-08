@@ -8,8 +8,10 @@ import { Router } from '@angular/router';
 export class UiService {
   private showAddDeposit: boolean = false;
   private showAddWithdraw: boolean = false;
+  private showLogout: boolean = false;
   private subjectDeposit = new Subject<any>();
   private subjectWithdraw = new Subject<any>();
+  private subjectLogout = new Subject<any>();
 
   constructor(private router:Router) {}
 
@@ -33,5 +35,14 @@ export class UiService {
 
   onToggleWithdraw(): Observable<any> {
     return this.subjectWithdraw.asObservable();
+  }
+
+  onToggleLogout(): Observable<any> {
+    return this.subjectLogout.asObservable();
+  }
+
+  setShowLogout(show: boolean): void {
+    this.showLogout = show;
+    this.subjectLogout.next(this.showLogout);
   }
 }
