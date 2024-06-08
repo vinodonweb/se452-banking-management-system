@@ -11,19 +11,27 @@
     </div>
     <div class="navbar-menu" id="nav-links">
         <div class="navbar-start">
-            <a routerLink="/" class="navbar-item">Home</a>
+            <a routerLink="/home" class="navbar-item">Home</a>
             <a routerLink="/dashboard" class="navbar-item">Dashboard</a>
             <a routerLink="/deposit" class="navbar-item">Deposit/Withdraw</a>
             <a routerLink="/transactionHistory" class="navbar-item">Transaction History</a>
             <a class="navbar-item">Feedback</a>
         </div>
         <div class="navbar-end">
-            <div class="navbar-item">
+            <div *ngIf="!showLogOut" class="navbar-item">
                 <div class="buttons is-right">
                     <a routerLink="/signup" class="button is-primary">
                         <strong>Sign up</strong>
                     </a>
                     <a routerLink="/login" class="button is-light"> Log in </a>
+                </div>
+            </div>
+            <div *ngIf="showLogOut" class="navbar-item">
+                <div class="buttons is-right">
+                    <a (click)="logout()" class="button is-primary">
+                        <strong>Log out</strong>
+                    </a>
+                   
                 </div>
             </div>
         </div>

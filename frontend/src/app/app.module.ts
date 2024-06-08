@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,18 +22,20 @@ import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TransactionHistoryComponent } from './components/transaction-history/transaction-history.component';
+import { AuthGuard } from './components/auth.guard';
 
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent, },
   { path: 'about', component: AboutComponent },
-  {path: 'deposit',component:TasksComponent},
+  {path: 'deposit',component:TasksComponent,canActivate: [AuthGuard]},
   {path: 'login',component:LoginComponent},
   {path: 'signup',component:SignupComponent},
+  {path: 'home',component:HomeComponent},
 
 
-  {path: 'dashboard',component:DashboardComponent},
-  {path:'transactionHistory',component:TransactionHistoryComponent}
+  {path: 'dashboard',component:DashboardComponent,canActivate: [AuthGuard]},
+  {path:'transactionHistory',component:TransactionHistoryComponent,canActivate: [AuthGuard]}
 ];
 
 @NgModule({

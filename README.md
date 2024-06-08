@@ -29,6 +29,6 @@ We will put it to a vote since we are 5, it will never be a tie
 |:----|:-----|:--------:|------:|
 |1|IDE|IntelliJ| Wide-range support for Spring.| 
 |2|Dependency Management|Maven| Simple configuration and widespread adoption |
-|3|Front-end design|ReactJS| Easy to use compared to other alternatives such as Angular.| 
+|3|Front-end design|Angular| Easy to use compared to other alternatives such as ReactJS.| 
 |4|Back-end design|  Springboot|Comprehensive ecosystem and offers a wide range of support| 
 |5|Configuration Management|Properties| It offers a traditional and widely accepted configuration format, ensuring compatibility and ease of use across different platforms|.
