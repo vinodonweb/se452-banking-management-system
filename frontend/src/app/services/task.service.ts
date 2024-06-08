@@ -8,6 +8,8 @@ import { Withdraw } from '../Withdraw';
 import { Router } from '@angular/router';
 import { Dashboard } from '../Dashboard';
 import { Transaction } from '../Transaction';
+import { User } from '../User';
+import { ResponseAPI } from '../ResponseAPI';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -62,4 +64,13 @@ export class TaskService {
   }
 
   
+  login(user: User):Observable<ResponseAPI> {
+    var post= this.http.post<ResponseAPI>(this.apiUrl+"/login", user, httpOptions);
+    return post;
+  }
+
+  signup(user: User): Observable<boolean> {
+    var post= this.http.post<boolean>(this.apiUrl+"/signup", user, httpOptions);
+    return post;
+  }
 }
