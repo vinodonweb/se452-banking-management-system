@@ -29,8 +29,8 @@ public class WithdrawService {
     public Withdraw save(Withdraw w) {
         log.traceEntry("enter save", w);
         log.traceExit("exit save", w);
-        TransactionHistory th = new TransactionHistory(w.getWithdrawId(),w.getTransactionNumber(), w.getAccountNumber(), w.getAmount(), "Withdraw", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
-        transactionRepo.save(th);
+        //TransactionHistory th = new TransactionHistory(w.getWithdrawId(),w.getTransactionNumber(), w.getAccountNumber(), w.getAmount(), "Withdraw", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
+        //transactionRepo.save(th);
         return repo.save(w);
 
     }
