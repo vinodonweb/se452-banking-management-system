@@ -1,8 +1,8 @@
 package com.bank.management.signup;
 
-import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import lombok.extern.log4j.*;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.stereotype.*;
 
 @Service
 @Log4j2
@@ -29,7 +29,6 @@ public class SignupService {
         log.traceExit("Exit register", true);
         return true;
     }
-
 
     // Other signup-related methods can be added here
 }

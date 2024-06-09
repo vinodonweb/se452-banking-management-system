@@ -1,14 +1,9 @@
 package com.bank.management.transactionHistory;
 
-import lombok.Data;
-import java.time.LocalDateTime;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import jakarta.persistence.*;
+import lombok.*;
+
+import java.time.*;
 
 
 @Data
@@ -34,4 +29,13 @@ public class TransactionHistory {
 
     @Column(name = "timestamp")
     private LocalDateTime timestamp;
+
+    //constructor created by vinod
+    public TransactionHistory(Long depositId, String transactionNumber, String accountNumber, double amount, String deposit, String format) {
+    }
+
+    //constructor created by vinod
+    public TransactionHistory() {
+
+    }
 }

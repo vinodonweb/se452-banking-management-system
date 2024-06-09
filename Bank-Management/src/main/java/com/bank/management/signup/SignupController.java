@@ -1,10 +1,9 @@
 package com.bank.management.signup;
 
-import com.bank.management.ResponseAPI;
-import com.bank.management.withdraw.Withdraw;
-import lombok.extern.log4j.Log4j2;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import com.bank.management.*;
+import lombok.extern.log4j.*;
+import org.springframework.beans.factory.annotation.*;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

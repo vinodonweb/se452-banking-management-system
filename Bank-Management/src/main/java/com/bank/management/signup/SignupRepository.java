@@ -1,8 +1,8 @@
 package com.bank.management.signup;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface SignupRepository extends JpaRepository<Signup, Long> {
+public interface SignupRepository extends MongoRepository<Signup, String> {
     Signup findByUsername(String username);
     Signup findByEmail(String email);
 }
