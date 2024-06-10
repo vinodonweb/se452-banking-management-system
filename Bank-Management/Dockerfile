@@ -1,4 +1,4 @@
 FROM openjdk:21
-WORKDIR /
-COPY  . /Bank-Management/target/Bank-Management-0.0.1-SNAPSHOT.jar
+WORKDIR /Bank-Management
+COPY target/Bank-Management-0.0.1-SNAPSHOT.jar /Bank-Management-0.0.1-SNAPSHOT.jar
 CMD [ "java", "-jar", "/Bank-Management-0.0.1-SNAPSHOT.jar" ]
