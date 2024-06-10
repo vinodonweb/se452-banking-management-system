@@ -23,3 +23,11 @@ services:
       - "27017:27017"
     volumes:
       - ~/apps/mongo:/data/db
+
+  bank-management:
+    build: ./Bank-Management
+    ports:
+      - "8081:8081"
+    depends_on:
+      - postgres
+      - mongo
