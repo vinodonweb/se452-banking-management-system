@@ -1,0 +1,11 @@
+com\bank\management\SignupTest.class
+com\bank\management\UserTest.class
+com\bank\management\BankManagementApplicationTests.class
+com\bank\management\WithdrawTest.class
+com\bank\management\BalanceEnquiryService.class
+com\bank\management\DepositService.class
+com\bank\management\BalanceEnquiryRepositoryTest.class
+com\bank\management\DepositTest.class
+com\bank\management\TransactionHistoryRepositoryTest.class
+com\bank\management\DashboardTest.class
+com\bank\management\LoginTest.class
