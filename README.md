@@ -8,6 +8,7 @@ The Bank Management System project aims to develop a comprehensive software solu
 
 
  Live website : https://se452-banking-project.netlify.app/
+              (Username : admin, Password :admin123)
 
 ## Project Members
 
