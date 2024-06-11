@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/balance")
+@CrossOrigin(origins = "*") // Allow all origins
 public class BalanceEnquiryController {
 
     @Autowired
