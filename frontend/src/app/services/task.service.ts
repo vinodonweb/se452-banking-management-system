@@ -14,6 +14,7 @@ import { ResponseAPI } from '../ResponseAPI';
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
+    'ngrok-skip-browser-warning': '69420'
   }),
 };
 
@@ -21,7 +22,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = 'https://c980-2607-fb91-227e-560-4832-3df6-6c31-5f64.ngrok-free.app/api';
+  private apiUrl = 'https://d7e9-2607-fb91-2265-c068-c497-8b4f-75a4-1c5b.ngrok-free.app/api';
   public   refresh: Subject<Account[]>=new Subject<Account[]>();
   public   refreshDashboard: Subject<Dashboard[]>=new Subject<Dashboard[]>();
   public   refreshTransactions: Subject<Transaction[]>=new Subject<Transaction[]>();
@@ -32,20 +33,20 @@ export class TaskService {
   constructor(private http: HttpClient,private router:Router) {}
 
    getTasks() {
-    return this.http.get<Account[]>(this.apiUrl+"/account").subscribe(accounts=>this.refresh.next(accounts));
+    return this.http.get<Account[]>(this.apiUrl+"/account", httpOptions).subscribe(accounts=>this.refresh.next(accounts));
   }
 
   getTransactions(accountNumber:String) {
-    return this.http.get<Transaction[]>(this.apiUrl+"/transactions/"+accountNumber).subscribe(transactions=>this.refreshTransactions.next(transactions));
+    return this.http.get<Transaction[]>(this.apiUrl+"/transactions/"+accountNumber, httpOptions).subscribe(transactions=>this.refreshTransactions.next(transactions));
   }
   getDashboard() {
-    return this.http.get<Dashboard[]>(this.apiUrl+"/dashboard").subscribe(dashboard=>this.refreshDashboard.next(dashboard));
+    return this.http.get<Dashboard[]>(this.apiUrl+"/dashboard", httpOptions).subscribe(dashboard=>this.refreshDashboard.next(dashboard));
   }
 
 
   deleteTask(account: Account): Observable<Account> {
     const url = `${this.apiUrl}/${account.accountId}`;
-    return this.http.delete<Account>(url);
+    return this.http.delete<Account>(url, httpOptions);
   }
 
   updateTaskReminder(account: Account): Observable<Account> {
