@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/signup")
 @Log4j2
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "*") // Allow all origins
 public class SignupController {
     @Autowired
     private SignupService signupService;
