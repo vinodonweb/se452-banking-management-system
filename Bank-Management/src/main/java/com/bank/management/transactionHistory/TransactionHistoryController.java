@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/transactions")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "*") // Allow all origins
 public class TransactionHistoryController {
 
     @Autowired
