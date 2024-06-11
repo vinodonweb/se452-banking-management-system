@@ -21,7 +21,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = 'http://localhost:8080/api';
+  private apiUrl = 'https://c980-2607-fb91-227e-560-4832-3df6-6c31-5f64.ngrok-free.app/api';
   public   refresh: Subject<Account[]>=new Subject<Account[]>();
   public   refreshDashboard: Subject<Dashboard[]>=new Subject<Dashboard[]>();
   public   refreshTransactions: Subject<Transaction[]>=new Subject<Transaction[]>();
