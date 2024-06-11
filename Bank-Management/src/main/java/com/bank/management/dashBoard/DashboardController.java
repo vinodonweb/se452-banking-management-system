@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/dashboard")
 @Log4j2
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "*") // Allow all origins
 
 public class DashboardController {
 
