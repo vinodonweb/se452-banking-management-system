@@ -22,7 +22,7 @@ const httpOptions = {
   providedIn: 'root',
 })
 export class TaskService {
-  private apiUrl = 'https://d7e9-2607-fb91-2265-c068-c497-8b4f-75a4-1c5b.ngrok-free.app/api';
+  private apiUrl = 'https://8676-172-178-99-192.ngrok-free.app/api';
   public   refresh: Subject<Account[]>=new Subject<Account[]>();
   public   refreshDashboard: Subject<Dashboard[]>=new Subject<Dashboard[]>();
   public   refreshTransactions: Subject<Transaction[]>=new Subject<Transaction[]>();
@@ -54,13 +54,13 @@ export class TaskService {
     return this.http.put<Account>(url, account, httpOptions);
   }
 
-  addDeposit(deposit: Deposit): Observable<Deposit> {
-    var post= this.http.post<Deposit>(this.apiUrl+"/deposit", deposit, httpOptions);
+  addDeposit(deposit: Deposit): Observable<ResponseAPI> {
+    var post= this.http.post<ResponseAPI>(this.apiUrl+"/deposit", deposit, httpOptions);
     return post;
   }
 
-  addWithdraw(withdraw: Withdraw): Observable<Withdraw> {
-    var post= this.http.post<Withdraw>(this.apiUrl+"/withdraw", withdraw, httpOptions);
+  addWithdraw(withdraw: Withdraw): Observable<ResponseAPI> {
+    var post= this.http.post<ResponseAPI>(this.apiUrl+"/withdraw", withdraw, httpOptions);
     return post;
   }
 
