@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/deposit")
 @Log4j2
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "*") // Allow all origins
 public class DepositController {
     @Autowired
     private DepositService service;
