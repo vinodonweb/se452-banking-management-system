@@ -6,6 +6,7 @@ import { Deposit } from 'src/app/Deposit';
 import { Withdraw } from 'src/app/Withdraw';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { Subject, Subscription } from 'rxjs';
+import { ResponseAPI } from '../../ResponseAPI';
 
 @Component({
   selector: 'app-tasks',
@@ -56,32 +57,60 @@ export class TasksComponent implements OnInit {
     this.taskService.updateTaskReminder(account).subscribe();
   }
 
-  async addDeposit(deposit: Deposit):Promise<void> {
-    this.taskService.addDeposit(deposit).subscribe((deposit) => this.deposits.push(deposit));
-    this.accounts.forEach(account => {
-      if (account.accountNumber == deposit.accountNumber) {
-        account.balance += deposit.amount;
+  async addDeposit(deposit: Deposit): Promise<void> {
+    this.taskService.addDeposit(deposit).subscribe(async (resp: ResponseAPI) => {
+      if (resp.status == "OK") {
+        this.deposits.push(deposit);
+        this.accounts.forEach(account => {
+          if (account.accountNumber == deposit.accountNumber) {
+            account.balance += deposit.amount;
+          }
+        });
+        this.showPopup = true;
+        this.messagePopup = "Deposit successful for account number:" + deposit.accountNumber + " !";
+        this.messageClass = "Success";
+        await this.delay(10000);
+        this.showPopup = false;
       }
-    })
-    this.showPopup=true;
-    this.messagePopup="Deposit successful for account number:"+deposit.accountNumber+" !";
-    this.messageClass="Success";
-    await this.delay(10000);
-    this.showPopup=false;
-
+      else 
+      {
+        this.showPopup = true;
+        this.messagePopup = resp.message;
+        this.messageClass = "Error";
+        await this.delay(10000);
+        this.showPopup = false;
+      }
+    });
   }
+  
   async addWithdraw(withdraw: Withdraw):Promise<void> {
-    this.taskService.addWithdraw(withdraw).subscribe((withdraw) => this.withdraws.push(withdraw));
-    this.accounts.forEach(account => {
-      if (account.accountNumber == withdraw.accountNumber) {
-        account.balance -= withdraw.amount;
+    this.taskService.addWithdraw(withdraw).subscribe(async (resp:ResponseAPI) => {
+      if(resp.status=="OK"){
+      this.withdraws.push(withdraw)
+      this.accounts.forEach(account => {
+        if (account.accountNumber == withdraw.accountNumber) {
+          account.balance -= withdraw.amount;
+        }
+      })
+      this.showPopup=true;
+      this.messagePopup="Withdraw successful for account number:"+withdraw.accountNumber+" !";
+      this.messageClass="Success";
+      await this.delay(10000);
+      this.showPopup=false;
+
       }
-    })
-    this.showPopup=true;
-    this.messagePopup="Withdraw successful for account number:"+withdraw.accountNumber+" !";
-    this.messageClass="Success";
-    await this.delay(10000);
-    this.showPopup=false;
+      else 
+      {
+        this.showPopup = true;
+        this.messagePopup = resp.message;
+        this.messageClass = "Error";
+        await this.delay(10000);
+        this.showPopup = false;
+      }  
+    
+    
+    });
+    
   }
 
 
