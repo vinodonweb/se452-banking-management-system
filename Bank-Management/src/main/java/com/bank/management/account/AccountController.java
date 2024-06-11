@@ -13,7 +13,7 @@ import java.util.List;
 @Log4j2
 @RestController
 @RequestMapping("/api/account")
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = "*") // Allow all origins
 public class AccountController {
 
     @Autowired
