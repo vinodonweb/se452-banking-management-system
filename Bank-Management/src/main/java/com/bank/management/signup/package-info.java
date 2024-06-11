@@ -1,7 +1,7 @@
 package com.bank.management.signup;
 
 /**
- * This package handles the Signup functionality.
+ * here I implemented using a combination of NoSQL and SQL databases.
  *
  * Implemented by: Vinod
  */
